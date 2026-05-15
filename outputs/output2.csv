@@ -1,0 +1,15 @@
+Agent,Model,Homeless,Age,Age_Started,Race,Gender,Zip,Prev_HCV_entry,Prev_HCV_exit,Prev_Injection,Prev_recept_sharing,Prev_Drug_in,Prev_Drug_out,Prev_friend_entry,Prev_friend_exit,Injections,Recept_sharing,Drug_out,Partners,Alt_route,Withdrawal,Partner_HCV_prop,Public_prop,Neighborhood,Treatment,HCV
+490771391,claudesonnet4.5,1,48,44,Hispanic,Female,60639,susceptible,susceptible,29,0.05,1,0,0,0,32,2,0,1,0,3,0,0.65,west side,0,susceptible
+208393663,claudesonnet4.5,1,37,20,Hispanic,Female,60651,susceptible,chronic,5,1,1,1,0,1,5,5,5,1,0,1,0,0.85,west side,0,susceptible
+1760779551,claudesonnet4.5,1,24,20,Hispanic,Female,60453,susceptible,chronic,22,1,1,1,0.5,0,22,22,22,2,0,3,0.5,0.75,west side,0,chronic
+1110995944,claudesonnet4.5,1,49,40,Hispanic,Female,60651,susceptible,susceptible,7,0,0,1,1,0,7,0,1,1,0,1,1,0.75,west side,0,chronic
+2018099683,claudesonnet4.5,1,31,19,Hispanic,Female,60647,susceptible,chronic,70,0.07,2,1,0.33,0.33,75,5,8,3,0,8,0.33,0.65,west side,0,chronic
+700138803,claudesonnet4.5,1,47,18,Hispanic,Female,60193,susceptible,susceptible,0,0.01,1,0,0,0,0,0,0,0,7,3,0,0,west side,1,susceptible
+1238160207,claudesonnet4.5,1,46,31,Hispanic,Female,60634,susceptible,susceptible,14,0,0,0,0,0,16,0,0,0,0,3,0,0.75,west side,0,susceptible
+1775692649,claudesonnet4.5,1,27,27,Hispanic,Female,60402,susceptible,chronic,52,0.83,1,1,0,0.5,58,42,35,2,8,12,0.15,0.68,west side,0,acute
+2009710957,claudesonnet4.5,1,27,26,Hispanic,Female,60625,susceptible,chronic,14,0.5,1,1,0,0.5,16,10,10,2,0,3,0.15,0.75,west side,0,acute
+1430711947,claudesonnet4.5,1,25,25,Hispanic,Female,60608,susceptible,susceptible,31,0.42,0,0,0,0,35,18,2,3,0,8,0.33,0.65,west side,0,acute
+100089119,claudesonnet4.5,1,31,31,Hispanic,Female,60707,susceptible,susceptible,3,0,0,0,0,0,3,0,0,0,0,1,0,0.75,west side,0,susceptible
+1269377113,claudesonnet4.5,1,21,20,Hispanic,Female,60090,susceptible,susceptible,7,0,0,0,0,0,7,0,0,0,0,1,0,0.75,west side,0,susceptible
+1862137729,claudesonnet4.5,1,33,33,Hispanic,Female,60625,susceptible,susceptible,8,0.55,2,0,0,0.5,10,6,0,2,0,3,0,0.65,west side,0,susceptible
+162017053,claudesonnet4.5,1,20,19,Hispanic,Female,60437,susceptible,susceptible,7,0.5,3,5,0.4,0.29,7,4,4,6,0,1,0.4,0.65,west side,0,acute
