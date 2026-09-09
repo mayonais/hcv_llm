@@ -1,0 +1,199 @@
+Model,exposure,outcome,direction,evidence_quality,measure,value,lower_ci,upper_ci,Paraphrase,factor1,factor2
+claudesonnet4.6,current or recent homelessness,public injecting,increase,strong,aOR,2.87,2.09,3.94,0,,
+claudesonnet4.6,current or recent homelessness,injection frequency,increase,moderate,aOR,1.57,1.12,2.2,0,,
+claudesonnet4.6,current or recent homelessness,receptive syringe sharing,increase,moderate,aOR,1.72,1.23,2.4,0,,
+claudesonnet4.6,current or recent homelessness,personal HCV infection status (RNA-positive),increase,moderate,aOR,,,,0,,
+claudesonnet4.6,current or recent homelessness,non-fatal overdose incidence,increase,moderate,aOR,1.59,1.1,2.3,0,,
+claudesonnet4.6,current or recent homelessness,number of injection partners,increase,moderate,,,,,0,,
+claudesonnet4.6,current or recent homelessness,number of HCV-positive injection partners,increase,weak,,,,,0,,
+claudesonnet4.6,current or recent homelessness,engaging in opioid use disorder treatment,decrease,moderate,aOR,,,,0,,
+claudesonnet4.6,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting),decrease,weak,null,null,null,null,0,,
+claudesonnet4.6,public injecting,personal HCV infection status (RNA-positive),increase,moderate,aOR,1.74,1.13,2.68,0,,
+claudesonnet4.6,public injecting,non-fatal overdose incidence,increase,moderate,aOR,1.67,1.22,2.29,0,,
+claudesonnet4.6,public injecting,receptive syringe sharing,increase,moderate,aOR,1.84,1.32,2.57,0,,
+claudesonnet4.6,public injecting,injection frequency,increase,moderate,aOR,1.58,1.23,2.03,0,,
+claudesonnet4.6,public injecting,engaging in opioid use disorder treatment,decrease,moderate,aOR,0.58,0.4,0.85,0,,
+claudesonnet4.6,receptive syringe sharing,personal HCV infection status (RNA-positive),increase,strong,aOR,1.76,1.38,2.24,0,,
+claudesonnet4.6,receptive syringe sharing,non-fatal overdose incidence,increase,moderate,aOR,,,,0,,
+claudesonnet4.6,injection frequency,personal HCV infection status (RNA-positive),increase,strong,aOR,1.77,1.45,2.16,0,,
+claudesonnet4.6,injection frequency,non-fatal overdose incidence,increase,moderate,aOR,1.03,1.01,1.05,0,,
+claudesonnet4.6,injection frequency,receptive syringe sharing,increase,moderate,aOR,,,,0,,
+claudesonnet4.6,injection frequency,non-injection routes of opioid administration (smoking/snorting),decrease,moderate,null,null,null,null,0,,
+claudesonnet4.6,personal HCV infection status (RNA-positive),non-fatal overdose incidence,increase,moderate,aHR,1.74,1.19,2.55,0,,
+claudesonnet4.6,engaging in opioid use disorder treatment,non-fatal overdose incidence,decrease,moderate,aOR,,,,0,,
+claudesonnet4.6,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive),decrease,moderate,aOR,0.42,0.23,0.77,0,,
+claudesonnet4.6,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence,decrease,moderate,aOR,0.52,0.36,0.75,0,,
+claudesonnet4.6,using illicitly manufactured fentanyl,injection frequency,increase,moderate,aOR,1.84,1.27,2.67,0,,
+claudesonnet4.6,number of injection partners,receptive syringe sharing,increase,strong,aOR,1.47,1.28,1.69,0,,
+claudesonnet4.6,number of HCV-positive injection partners,receptive syringe sharing,increase,moderate,aOR,,,,0,,
+gpt-oss-120b,current or recent homelessness,public injecting,increase,moderate,,,,,0,,
+gpt-oss-120b,current or recent homelessness,injection frequency,increase,moderate,aOR,null,null,null,0,,
+gpt-oss-120b,current or recent homelessness,receptive syringe sharing,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,current or recent homelessness,personal HCV infection status (RNA-positive),increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,current or recent homelessness,non-fatal overdose incidence,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,current or recent homelessness,number of injection partners,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,current or recent homelessness,number of HCV-positive injection partners,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,current or recent homelessness,engaging in opioid use disorder treatment,decrease,moderate,null,null,null,null,0,,
+gpt-oss-120b,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting),increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,public injecting,personal HCV infection status (RNA-positive),increase,strong,null,null,null,null,0,,
+gpt-oss-120b,public injecting,non-fatal overdose incidence,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,public injecting,receptive syringe sharing,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,public injecting,injection frequency,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,public injecting,engaging in opioid use disorder treatment,decrease,moderate,,,,,0,,
+gpt-oss-120b,receptive syringe sharing,personal HCV infection status (RNA-positive),increase,strong,aOR,2,1.5,2.6,0,,
+gpt-oss-120b,receptive syringe sharing,non-fatal overdose incidence,mixed,weak,null,null,null,null,0,,
+gpt-oss-120b,injection frequency,personal HCV infection status (RNA-positive),increase,strong,null,null,null,null,0,,
+gpt-oss-120b,injection frequency,non-fatal overdose incidence,increase,strong,null,null,null,null,0,,
+gpt-oss-120b,injection frequency,receptive syringe sharing,increase,strong,null,null,null,null,0,,
+gpt-oss-120b,injection frequency,non-injection routes of opioid administration (smoking/snorting),decrease,moderate,null,null,null,null,0,,
+gpt-oss-120b,personal HCV infection status (RNA-positive),non-fatal overdose incidence,uncertain,weak,null,null,null,null,0,,
+gpt-oss-120b,engaging in opioid use disorder treatment,non-fatal overdose incidence,decrease,moderate,null,null,null,null,0,,
+gpt-oss-120b,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive),decrease,moderate,null,null,null,null,0,,
+gpt-oss-120b,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,using illicitly manufactured fentanyl,injection frequency,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,number of injection partners,receptive syringe sharing,increase,strong,null,null,null,null,0,,
+gpt-oss-120b,number of HCV-positive injection partners,receptive syringe sharing,increase,moderate,null,null,null,null,0,,
+deepseek.v3.2,current or recent homelessness,public injecting,increase,strong,aOR,null,null,null,0,,
+deepseek.v3.2,current or recent homelessness,injection frequency,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,current or recent homelessness,receptive syringe sharing,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,current or recent homelessness,personal HCV infection status (RNA-positive),increase,strong,aOR,2.4,1.8,3.2,0,,
+deepseek.v3.2,current or recent homelessness,non-fatal overdose incidence,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,current or recent homelessness,number of injection partners,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,current or recent homelessness,number of HCV-positive injection partners,increase,moderate,null,null,null,null,0,,
+deepseek.v3.2,current or recent homelessness,engaging in opioid use disorder treatment,decrease,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting),increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,public injecting,personal HCV infection status (RNA-positive),increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,public injecting,non-fatal overdose incidence,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,public injecting,receptive syringe sharing,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,public injecting,injection frequency,increase,moderate,null,null,null,null,0,,
+deepseek.v3.2,public injecting,engaging in opioid use disorder treatment,decrease,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,receptive syringe sharing,personal HCV infection status (RNA-positive),increase,strong,aOR,null,null,null,0,,
+deepseek.v3.2,receptive syringe sharing,non-fatal overdose incidence,increase,moderate,aOR,1.46,1.2,1.78,0,,
+deepseek.v3.2,injection frequency,personal HCV infection status (RNA-positive),increase,strong,aOR,null,null,null,0,,
+deepseek.v3.2,injection frequency,non-fatal overdose incidence,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,injection frequency,receptive syringe sharing,increase,strong,aOR,1.02,1.01,1.03,0,,
+deepseek.v3.2,injection frequency,non-injection routes of opioid administration (smoking/snorting),decrease,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,personal HCV infection status (RNA-positive),non-fatal overdose incidence,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,engaging in opioid use disorder treatment,non-fatal overdose incidence,decrease,strong,aOR,0.47,0.33,0.67,0,,
+deepseek.v3.2,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive),decrease,moderate,aOR,0.4,0.2,0.8,0,,
+deepseek.v3.2,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence,increase,moderate,aOR,1.38,1.1,1.73,0,,
+deepseek.v3.2,using illicitly manufactured fentanyl,injection frequency,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,number of injection partners,receptive syringe sharing,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,number of HCV-positive injection partners,receptive syringe sharing,increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive),decrease,strong,aOR,0.5,0.4,0.63,0,,
+deepseek.v3.2,engaging in opioid use disorder treatment,injection frequency,decrease,strong,aOR,null,null,null,0,,
+deepseek.v3.2,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting),increase,moderate,aOR,null,null,null,0,,
+deepseek.v3.2,number of injection partners,injection frequency,increase,moderate,null,null,null,null,0,,
+deepseek.v3.2,number of injection partners,personal HCV infection status (RNA-positive),increase,moderate,aOR,null,null,null,0,,
+claudesonnet4.6,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive),decrease,moderate,aOR,0.4,0.26,0.62,0,,
+claudesonnet4.6,engaging in opioid use disorder treatment,injection frequency,decrease,strong,aOR,0.44,0.33,0.59,0,,
+claudesonnet4.6,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting),increase,moderate,aOR,null,null,null,0,,
+claudesonnet4.6,number of injection partners,injection frequency,increase,moderate,,,,,0,,
+claudesonnet4.6,number of injection partners,personal HCV infection status (RNA-positive),increase,moderate,aOR,,,,0,,
+gpt-oss-120b,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive),decrease,strong,RR,0.56,0.44,0.71,0,,
+gpt-oss-120b,engaging in opioid use disorder treatment,injection frequency,decrease,strong,null,null,null,null,0,,
+gpt-oss-120b,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting),mixed,moderate,null,null,null,null,0,,
+gpt-oss-120b,number of injection partners,injection frequency,increase,moderate,null,null,null,null,0,,
+gpt-oss-120b,number of injection partners,personal HCV infection status (RNA-positive),increase,strong,null,null,null,null,0,,
+gpt-oss-120b,engaging in opioid use disorder treatment,receptive syringe sharing,decrease,strong,null,null,null,null,0,,
+deepseek.v3.2,engaging in opioid use disorder treatment,receptive syringe sharing,decrease,strong,aOR,null,null,null,0,,
+claudesonnet4.6,engaging in opioid use disorder treatment,receptive syringe sharing,decrease,moderate,aOR,,,,0,,
+gpt-oss-120b,,,increase,moderate,,,,,1,current or recent homelessness,public injecting
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,current or recent homelessness,injection frequency
+gpt-oss-120b,,,increase,moderate,aOR,1.71,1.3,2.24,1,current or recent homelessness,receptive syringe sharing
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,current or recent homelessness,personal HCV infection status (RNA-positive)
+gpt-oss-120b,,,increase,moderate,aOR,1.71,1.3,2.24,1,current or recent homelessness,non-fatal overdose incidence
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,current or recent homelessness,number of injection partners
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,current or recent homelessness,number of HCV-positive injection partners
+gpt-oss-120b,,,decrease,moderate,null,null,null,null,1,current or recent homelessness,engaging in opioid use disorder treatment
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting)
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,public injecting,personal HCV infection status (RNA-positive)
+gpt-oss-120b,,,increase,moderate,,,,,1,public injecting,non-fatal overdose incidence
+gpt-oss-120b,,,increase,moderate,aOR,1.71,1.3,2.24,1,public injecting,receptive syringe sharing
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,public injecting,injection frequency
+gpt-oss-120b,,,decrease,moderate,null,null,null,null,1,public injecting,engaging in opioid use disorder treatment
+gpt-oss-120b,,,increase,strong,null,null,null,null,1,receptive syringe sharing,personal HCV infection status (RNA-positive)
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,receptive syringe sharing,non-fatal overdose incidence
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,injection frequency,personal HCV infection status (RNA-positive)
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,injection frequency,non-fatal overdose incidence
+gpt-oss-120b,,,increase,strong,null,null,null,null,1,injection frequency,receptive syringe sharing
+gpt-oss-120b,,,decrease,moderate,null,null,null,null,1,injection frequency,non-injection routes of opioid administration (smoking/snorting)
+gpt-oss-120b,,,decrease,moderate,null,null,null,null,1,engaging in opioid use disorder treatment,non-fatal overdose incidence
+gpt-oss-120b,,,decrease,strong,OR,0.55,0.44,0.68,1,engaging in opioid use disorder treatment,receptive syringe sharing
+gpt-oss-120b,,,decrease,moderate,null,null,null,null,1,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive)
+gpt-oss-120b,,,decrease,strong,null,null,null,null,1,engaging in opioid use disorder treatment,injection frequency
+gpt-oss-120b,,,increase,moderate,aOR,1.45,1.12,1.88,1,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting)
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,number of injection partners,injection frequency
+gpt-oss-120b,,,increase,strong,null,null,null,null,1,number of injection partners,personal HCV infection status (RNA-positive)
+gpt-oss-120b,,,decrease,moderate,,,,,1,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive)
+gpt-oss-120b,,,decrease,weak,,,,,1,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,using illicitly manufactured fentanyl,injection frequency
+gpt-oss-120b,,,mixed,weak,null,null,null,null,1,personal HCV infection status (RNA-positive),non-fatal overdose incidence
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,number of injection partners,receptive syringe sharing
+gpt-oss-120b,,,increase,moderate,null,null,null,null,1,number of HCV-positive injection partners,receptive syringe sharing
+claudesonnet4.6,,,increase,strong,aOR,2.87,2.07,3.98,1,current or recent homelessness,public injecting
+claudesonnet4.6,,,increase,moderate,aOR,1.58,1.12,2.23,1,current or recent homelessness,injection frequency
+claudesonnet4.6,,,increase,moderate,aOR,1.74,1.23,2.46,1,current or recent homelessness,receptive syringe sharing
+claudesonnet4.6,,,increase,moderate,aOR,,,,1,current or recent homelessness,personal HCV infection status (RNA-positive)
+claudesonnet4.6,,,increase,moderate,aOR,1.59,1.1,2.3,1,current or recent homelessness,non-fatal overdose incidence
+claudesonnet4.6,,,increase,moderate,,,,,1,current or recent homelessness,number of injection partners
+claudesonnet4.6,,,increase,weak,,,,,1,current or recent homelessness,number of HCV-positive injection partners
+claudesonnet4.6,,,decrease,moderate,aOR,,,,1,current or recent homelessness,engaging in opioid use disorder treatment
+claudesonnet4.6,,,uncertain,weak,,,,,1,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting)
+claudesonnet4.6,,,increase,moderate,aOR,,,,1,public injecting,personal HCV infection status (RNA-positive)
+claudesonnet4.6,,,increase,moderate,aOR,1.67,1.18,2.37,1,public injecting,non-fatal overdose incidence
+claudesonnet4.6,,,increase,moderate,aOR,1.87,1.32,2.65,1,public injecting,receptive syringe sharing
+claudesonnet4.6,,,increase,moderate,aOR,1.47,1.1,1.97,1,public injecting,injection frequency
+claudesonnet4.6,,,decrease,moderate,aOR,0.43,0.22,0.84,1,public injecting,engaging in opioid use disorder treatment
+claudesonnet4.6,,,increase,strong,aOR,1.96,1.36,2.82,1,receptive syringe sharing,personal HCV infection status (RNA-positive)
+claudesonnet4.6,,,increase,weak,,,,,1,receptive syringe sharing,non-fatal overdose incidence
+claudesonnet4.6,,,increase,strong,aOR,,,,1,injection frequency,personal HCV infection status (RNA-positive)
+claudesonnet4.6,,,increase,moderate,aOR,1.89,1.34,2.66,1,injection frequency,non-fatal overdose incidence
+claudesonnet4.6,,,increase,strong,aOR,,,,1,injection frequency,receptive syringe sharing
+claudesonnet4.6,,,decrease,moderate,null,null,null,null,1,injection frequency,non-injection routes of opioid administration (smoking/snorting)
+claudesonnet4.6,,,decrease,moderate,aOR,0.57,0.4,0.82,1,engaging in opioid use disorder treatment,non-fatal overdose incidence
+claudesonnet4.6,,,decrease,moderate,aOR,,,,1,engaging in opioid use disorder treatment,receptive syringe sharing
+claudesonnet4.6,,,decrease,moderate,aOR,0.57,0.37,0.87,1,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive)
+claudesonnet4.6,,,decrease,strong,null,null,null,null,1,engaging in opioid use disorder treatment,injection frequency
+claudesonnet4.6,,,increase,moderate,aOR,2.08,1.3,3.33,1,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting)
+claudesonnet4.6,,,increase,moderate,,,,,1,number of injection partners,injection frequency
+claudesonnet4.6,,,increase,moderate,aOR,,,,1,number of injection partners,personal HCV infection status (RNA-positive)
+claudesonnet4.6,,,decrease,moderate,aOR,0.42,0.22,0.81,1,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive)
+claudesonnet4.6,,,decrease,moderate,aOR,0.43,0.22,0.84,1,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence
+claudesonnet4.6,,,increase,moderate,aOR,1.94,1.32,2.86,1,using illicitly manufactured fentanyl,injection frequency
+claudesonnet4.6,,,increase,weak,aOR,,,,1,personal HCV infection status (RNA-positive),non-fatal overdose incidence
+claudesonnet4.6,,,increase,strong,aOR,,,,1,number of injection partners,receptive syringe sharing
+claudesonnet4.6,,,increase,moderate,aOR,,,,1,number of HCV-positive injection partners,receptive syringe sharing
+deepseek.v3.2,,,increase,strong,aOR,2.5,2.1,2.98,1,current or recent homelessness,public injecting
+deepseek.v3.2,,,increase,moderate,aOR,1.5,1.1,2,1,current or recent homelessness,injection frequency
+deepseek.v3.2,,,increase,moderate,aOR,1.5,1.2,1.9,1,current or recent homelessness,receptive syringe sharing
+deepseek.v3.2,,,increase,moderate,aOR,1.7,1.3,2.2,1,current or recent homelessness,personal HCV infection status (RNA-positive)
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,current or recent homelessness,non-fatal overdose incidence
+deepseek.v3.2,,,increase,moderate,aOR,1.5,1.1,2,1,current or recent homelessness,number of injection partners
+deepseek.v3.2,,,increase,moderate,aOR,1.5,1.1,2,1,current or recent homelessness,number of HCV-positive injection partners
+deepseek.v3.2,,,decrease,moderate,aOR,0.6,0.5,0.7,1,current or recent homelessness,engaging in opioid use disorder treatment
+deepseek.v3.2,,,increase,moderate,aOR,1.5,1.1,2,1,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting)
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,public injecting,personal HCV infection status (RNA-positive)
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,public injecting,non-fatal overdose incidence
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,public injecting,receptive syringe sharing
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,public injecting,injection frequency
+deepseek.v3.2,,,decrease,moderate,aOR,0.5,0.3,0.8,1,public injecting,engaging in opioid use disorder treatment
+deepseek.v3.2,,,increase,strong,aOR,2.4,1.8,3.1,1,receptive syringe sharing,personal HCV infection status (RNA-positive)
+deepseek.v3.2,,,increase,moderate,aOR,1.4,1.1,1.8,1,receptive syringe sharing,non-fatal overdose incidence
+deepseek.v3.2,,,increase,strong,aOR,1.74,1.42,2.13,1,injection frequency,personal HCV infection status (RNA-positive)
+deepseek.v3.2,,,increase,moderate,aOR,1.02,1.01,1.03,1,injection frequency,non-fatal overdose incidence
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,injection frequency,receptive syringe sharing
+deepseek.v3.2,,,decrease,moderate,aOR,0.4,0.2,0.7,1,injection frequency,non-injection routes of opioid administration (smoking/snorting)
+deepseek.v3.2,,,decrease,moderate,aOR,0.4,0.2,0.8,1,engaging in opioid use disorder treatment,non-fatal overdose incidence
+deepseek.v3.2,,,decrease,strong,aOR,0.46,0.32,0.67,1,engaging in opioid use disorder treatment,receptive syringe sharing
+deepseek.v3.2,,,decrease,strong,aOR,0.44,0.24,0.8,1,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive)
+deepseek.v3.2,,,decrease,strong,aOR,null,null,null,1,engaging in opioid use disorder treatment,injection frequency
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting)
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,number of injection partners,injection frequency
+deepseek.v3.2,,,increase,moderate,aOR,1.7,1.1,2.6,1,number of injection partners,personal HCV infection status (RNA-positive)
+deepseek.v3.2,,,increase,moderate,aOR,1.5,1.1,2,1,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive)
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence
+deepseek.v3.2,,,increase,moderate,aOR,1.8,1.1,2.9,1,using illicitly manufactured fentanyl,injection frequency
+deepseek.v3.2,,,increase,moderate,aOR,1.49,1.1,2.01,1,personal HCV infection status (RNA-positive),non-fatal overdose incidence
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,number of injection partners,receptive syringe sharing
+deepseek.v3.2,,,increase,moderate,aOR,null,null,null,1,number of HCV-positive injection partners,receptive syringe sharing
