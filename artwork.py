@@ -133,7 +133,13 @@ def draw_association_table(kind, knowledge, housing, correlations):
     """Retain the original banded comparison layout at final publication size."""
     configure_artwork()
     pairs = [pair for pair in EXPECTED if (pair[0] == TERMS["Homeless"]) == (kind == "housing")]
-    row_mm, header_mm, legend_mm, margin_mm = 8.3, 19, (17.5 if kind == "housing" else 21), 1.5
+    # Use taller rows, without changing column widths or shrinking the artwork.
+    # A two-row legend frees vertical space for S1's 23 associations.
+    if kind == "housing":
+        row_mm, header_mm, legend_mm = 11, 19, 17.5
+    else:
+        row_mm, header_mm, legend_mm = 9, 16.4, 7.5
+    margin_mm = 1.5
     height = 2*margin_mm + header_mm + row_mm*len(pairs) + legend_mm
     fig = plt.figure(figsize=(WIDTH_MM/MM_PER_INCH, height/MM_PER_INCH), dpi=100)
     ax = fig.add_axes([0, 0, 1, 1])
@@ -185,7 +191,7 @@ def draw_association_table(kind, knowledge, housing, correlations):
         background(x+.2, y+.2, width-.4, row_mm-.4, status)
         lines = text.split("\n")
         # Keep the direction/effect at 8 pt and reduce only estimate/CI detail.
-        spacing_mm = 2.35
+        spacing_mm = 2.85 if kind == "housing" else 2.6
         for index, line in enumerate(lines):
             offset = ((len(lines)-1)/2-index)*spacing_mm
             artist = ax.text(x+width/2, y+row_mm/2+offset, line, ha="center", va="center",
@@ -242,7 +248,12 @@ def draw_association_table(kind, knowledge, housing, correlations):
     if kind == "housing":
         legend = [item for item in legend if item[0] != "uncertain"]
     for index, (status, label) in enumerate(legend):
-        x, y = left+2, legend_mm-3.2-index*3.5
+        if kind == "housing":
+            x, y = left+2, legend_mm-3.2-index*3.5
+        else:
+            positions = [(0, 5.6), (56, 5.6), (112, 5.6), (0, 2.1), (82, 2.1)]
+            offset_x, y = positions[index]
+            x = left+2+offset_x
         background(x, y-1, 7, 2, status)
         ax.text(x+8.5, y, label, va="center", fontsize=8, color="#000000", zorder=3)
 
