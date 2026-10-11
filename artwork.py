@@ -119,9 +119,10 @@ def _knowledge_text(row):
     lines = [f"{direction} {row.evidence_quality}"]
     if pd.notna(row.value):
         measure = "" if pd.isna(row.measure) else str(row.measure)
-        lines.append(f"{measure} {row.value:.2f}".strip())
+        estimate = f"{measure} {row.value:.2f}".strip()
         if pd.notna(row.lower_ci) and pd.notna(row.upper_ci):
-            lines.append(f"({row.lower_ci:.2f}–{row.upper_ci:.2f})")
+            estimate += f" ({row.lower_ci:.2f}–{row.upper_ci:.2f})"
+        lines.append(estimate)
     return "\n".join(lines)
 
 
@@ -133,18 +134,18 @@ def draw_association_table(kind, knowledge, housing, correlations):
     """Retain the original banded comparison layout at final publication size."""
     configure_artwork()
     pairs = [pair for pair in EXPECTED if (pair[0] == TERMS["Homeless"]) == (kind == "housing")]
-    # Use taller rows, without changing column widths or shrinking the artwork.
-    # A two-row legend frees vertical space for S1's 23 associations.
+    # Preserve the original compact, banded table style. Allocate more width
+    # to the two-line knowledge cells so estimates and intervals stay together.
     if kind == "housing":
-        row_mm, header_mm, legend_mm = 11, 19, 17.5
+        row_mm, header_mm, legend_mm = 7.5, 23, 17.5
     else:
-        row_mm, header_mm, legend_mm = 9, 16.4, 7.5
+        row_mm, header_mm, legend_mm = 6.5, 23, 21
     margin_mm = 1.5
     height = 2*margin_mm + header_mm + row_mm*len(pairs) + legend_mm
     fig = plt.figure(figsize=(WIDTH_MM/MM_PER_INCH, height/MM_PER_INCH), dpi=100)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, WIDTH_MM); ax.set_ylim(0, height); ax.axis("off")
-    left, label_w, expected_w, knowledge_w, output_w = 1.5, 52.8, 8, 17.2, 19.2
+    left, label_w, expected_w, knowledge_w, output_w = 1.5, 30.2, 6, 27.2, 17.4
     knowledge_x = left+label_w+expected_w
     output_x = knowledge_x+3*knowledge_w+1
     body_top = height-margin_mm-header_mm
@@ -165,13 +166,14 @@ def draw_association_table(kind, knowledge, housing, correlations):
         for j, label in enumerate(headers):
             ax.text(origin+(j+.5)*width, height-9, label, ha="center", va="center",
                     fontsize=8, linespacing=1)
-    ax.add_patch(Rectangle((left, body_top+.45), WIDTH_MM-2*left, 5.2,
+    ax.add_patch(Rectangle((left, body_top+.45), WIDTH_MM-2*left, 9,
                            facecolor="#B0B8C4", edgecolor="none"))
-    ax.text(knowledge_x+1.5*knowledge_w, body_top+3, "Direction + evidence + estimate",
-            ha="center", va="center", fontsize=8, style="italic")
-    method = "Paired $d_z$ + 95% bootstrap CI" if kind == "housing" else "Spearman's rank correlation"
-    ax.text(output_x+1.5*output_w, body_top+3, method,
-            ha="center", va="center", fontsize=8, style="italic")
+    ax.text(knowledge_x+1.5*knowledge_w, body_top+5,
+            "Direction + LLM-rated evidence strength\n+ LLM-derived association estimate",
+            ha="center", va="center", fontsize=8, style="italic", linespacing=1.1)
+    method = "Paired Cohen's $d_z$\n+ 95% bootstrap CI" if kind == "housing" else "Spearman's rank correlation"
+    ax.text(output_x+1.5*output_w, body_top+5, method,
+            ha="center", va="center", fontsize=8, style="italic", linespacing=1.1)
 
     def background(x, y, width, row_height, status):
         patch = Rectangle((x, y), width, row_height, facecolor=palette[status],
@@ -191,7 +193,7 @@ def draw_association_table(kind, knowledge, housing, correlations):
         background(x+.2, y+.2, width-.4, row_mm-.4, status)
         lines = text.split("\n")
         # Keep the direction/effect at 8 pt and reduce only estimate/CI detail.
-        spacing_mm = 2.85 if kind == "housing" else 2.6
+        spacing_mm = 2.8
         for index, line in enumerate(lines):
             offset = ((len(lines)-1)/2-index)*spacing_mm
             artist = ax.text(x+width/2, y+row_mm/2+offset, line, ha="center", va="center",
@@ -208,9 +210,12 @@ def draw_association_table(kind, knowledge, housing, correlations):
                                    facecolor="#F0F4F8", edgecolor="none", zorder=0))
         ax.add_patch(Rectangle((left+label_w, y), expected_w, row_mm,
                                facecolor="#ECEFF1", edgecolor="none", zorder=0))
-        label = ax.text(left+.3, y+row_mm/2,
-                        _pair_label(a, b), ha="left", va="center",
-                        fontsize=8, color="#000000", zorder=3)
+        # Keep each variable intact; wrap only at the pair separator when needed.
+        label_text = _pair_label(a, b)
+        label = ax.text(left+.3, y+row_mm/2, label_text, ha="left", va="center",
+                        fontsize=8, color="#000000", zorder=3, linespacing=1.05)
+        if label.get_window_extent(fig.canvas.get_renderer()).width > (label_w-.6)*fig.dpi/MM_PER_INCH:
+            label.set_text(label_text.replace(" ~ ", " ~\n"))
         cell_records.append((label, label_w-.6, row_mm-.4))
         ax.text(left+label_w+expected_w/2, y+row_mm/2, expected,
                 ha="center", va="center", fontsize=10, color="#000000", zorder=3)
@@ -248,12 +253,7 @@ def draw_association_table(kind, knowledge, housing, correlations):
     if kind == "housing":
         legend = [item for item in legend if item[0] != "uncertain"]
     for index, (status, label) in enumerate(legend):
-        if kind == "housing":
-            x, y = left+2, legend_mm-3.2-index*3.5
-        else:
-            positions = [(0, 5.6), (56, 5.6), (112, 5.6), (0, 2.1), (82, 2.1)]
-            offset_x, y = positions[index]
-            x = left+2+offset_x
+        x, y = left+2, legend_mm-3.2-index*3.5
         background(x, y-1, 7, 2, status)
         ax.text(x+8.5, y, label, va="center", fontsize=8, color="#000000", zorder=3)
 
@@ -304,23 +304,28 @@ def plot_abm_correlations(results):
     frame = frame.sort_values(["ModelLabel", "Housing"]).reset_index(drop=True)
     labels = frame.ModelLabel.astype(str)+" – "+frame.HousingLabel
     cols = ["Injections", "Recept_sharing", "Drug_in", "Drug_out", "Partner_HCV_prop"]
-    fig, axes = plt.subplots(5, 2, figsize=(WIDTH_MM/MM_PER_INCH, 220/MM_PER_INCH))
-    fig.subplots_adjust(left=.18, right=.98, top=.975, bottom=.115, hspace=1.1, wspace=.92)
-    colors = {"Claude":"#245A81", "DeepSeek":"#A33F25", "GPT-OSS":"#267142"}
+    fig, axes = plt.subplots(5, 2, figsize=(WIDTH_MM/MM_PER_INCH, 195/MM_PER_INCH))
+    fig.subplots_adjust(left=.18, right=.985, top=.955, bottom=.115, hspace=1.05, wspace=.95)
+    colors = {"Claude":"#4C72B0", "DeepSeek":"#DD8452", "GPT-OSS":"#55A868"}
     for letter, ax, (a,b) in zip("abcdefghij", axes.flat, combinations(cols,2)):
         y = np.arange(len(frame))
         ax.scatter(frame[f"assoc_ABM_{a}__{b}"], y, marker="|", s=100, color="#111111", linewidths=1, zorder=2)
         for i, row in frame.iterrows():
-            ax.scatter(row[f"assoc_LLM_{a}__{b}"], i, marker="o" if row.Housing==0 else "^", s=25,
-                       color=colors[row.ModelLabel], edgecolors="#111111", linewidths=.4, zorder=3)
+            ax.scatter(row[f"assoc_LLM_{a}__{b}"], i, marker="o" if row.Housing==0 else "^", s=55,
+                       color=colors[row.ModelLabel], edgecolors="white", linewidths=.5, zorder=3)
         ax.set_yticks(y, labels, fontsize=8); ax.set_ylim(-.5,len(frame)-.5); ax.invert_yaxis()
-        ax.set_xlim(-1,1); ax.set_xticks([-1,0,1])
-        ax.set_xlabel(_pair_label(a, b), fontsize=8, labelpad=2)
-        ax.axvline(0, linewidth=.35, color="#555555", zorder=0)
+        ax.set_xlim(-1,1); ax.set_xticks([-1,-.5,0,.5,1])
+        title_location = "left" if ax in axes[:,0] else "right"
+        ax.set_title(_pair_label(a, b), fontsize=8, loc=title_location, pad=5)
+        ax.grid(axis="x", linestyle=":", color="#888888", linewidth=.35)
         ax.spines[["top", "right"]].set_visible(False)
-        ax.text(.03,.92,letter,transform=ax.transAxes,va="top",fontsize=9,weight="bold")
-    fig.supxlabel("Spearman rank correlation", fontsize=9, y=.045)
-    handles = [plt.Line2D([],[],marker=mark,linestyle="",color="#111111",label=label,markersize=5)
+        ax.text(.5,-.32,f"({letter})",transform=ax.transAxes,ha="center",va="top",fontsize=8)
+    fig.supxlabel("Spearman's rank correlation", fontsize=8, y=.045)
+    model_handles = [plt.Line2D([],[],marker="s",linestyle="",color=color,label=model,markersize=5)
+                     for model,color in colors.items()]
+    handles = [plt.Line2D([],[],marker=mark,linestyle="",color="gray" if mark != "|" else "black",
+                         label=label,markersize=5)
                for mark,label in [("o","Stable"),("^","Homeless"),("|","Matched ABM")]]
-    fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False, bbox_to_anchor=(.56,.005), fontsize=8)
+    fig.legend(handles=model_handles+handles, loc="lower center", ncol=6, frameon=False,
+               bbox_to_anchor=(.5,.005), fontsize=8, columnspacing=1, handletextpad=.4)
     export_artwork(fig, "FigS2")
