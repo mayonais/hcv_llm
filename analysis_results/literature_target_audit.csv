@@ -1,0 +1,97 @@
+Model,kind,exposure,outcome,expected,scored,estimate,estimable,generated_match,knowledge_direction,knowledge_match,paraphrase_direction,prompt_match
+claudesonnet4.6,housing,current or recent homelessness,public injecting,↑,True,5.895803915811892,True,True,increase,True,increase,True
+claudesonnet4.6,housing,current or recent homelessness,injection frequency,↑,True,0.028767068579392412,True,True,increase,True,increase,True
+claudesonnet4.6,housing,current or recent homelessness,receptive syringe sharing,↑,True,0.3657409182994881,True,True,increase,True,increase,True
+claudesonnet4.6,housing,current or recent homelessness,personal HCV infection status (RNA-positive),↑,True,0.24766171207713492,True,True,increase,True,increase,True
+claudesonnet4.6,housing,current or recent homelessness,non-fatal overdose incidence,↑,True,0.6476143983657926,True,True,increase,True,increase,True
+claudesonnet4.6,housing,current or recent homelessness,number of injection partners,↑,True,0.040879793902032516,True,True,increase,True,increase,True
+claudesonnet4.6,housing,current or recent homelessness,number of HCV-positive injection partners,↔,False,0.06681531047810611,True,False,increase,False,increase,True
+claudesonnet4.6,housing,current or recent homelessness,engaging in opioid use disorder treatment,↔,False,,False,False,decrease,False,decrease,True
+claudesonnet4.6,housing,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting),↓,True,-0.24236481280994573,True,True,decrease,True,uncertain,False
+claudesonnet4.6,correlation,public injecting,personal HCV infection status (RNA-positive),↑,True,0.13269921378456545,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,public injecting,non-fatal overdose incidence,↑,True,0.25681676256473357,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,public injecting,receptive syringe sharing,↑,True,0.11407745924404493,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,public injecting,injection frequency,↑,True,-0.04283787061598115,True,False,increase,True,increase,True
+claudesonnet4.6,correlation,public injecting,engaging in opioid use disorder treatment,↓,True,,False,False,decrease,True,decrease,True
+claudesonnet4.6,correlation,receptive syringe sharing,personal HCV infection status (RNA-positive),↑,True,0.20516029637737856,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,receptive syringe sharing,non-fatal overdose incidence,↑,True,0.3796558121095251,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,engaging in opioid use disorder treatment,non-fatal overdose incidence,↓,True,,False,False,decrease,True,decrease,True
+claudesonnet4.6,correlation,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive),↓,True,,False,False,decrease,True,decrease,True
+claudesonnet4.6,correlation,engaging in opioid use disorder treatment,receptive syringe sharing,↓,True,,False,False,decrease,True,decrease,True
+claudesonnet4.6,correlation,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting),↓,True,,False,False,increase,False,increase,True
+claudesonnet4.6,correlation,engaging in opioid use disorder treatment,injection frequency,↓,True,,False,False,decrease,True,decrease,True
+claudesonnet4.6,correlation,injection frequency,personal HCV infection status (RNA-positive),↑,True,0.13097904881164435,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,injection frequency,non-fatal overdose incidence,↑,True,0.6521062341659477,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,injection frequency,receptive syringe sharing,↑,True,0.10484658310701025,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,injection frequency,non-injection routes of opioid administration (smoking/snorting),↓,True,0.8492645560802564,True,False,decrease,True,decrease,True
+claudesonnet4.6,correlation,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive),↓,True,0.0471415833664417,True,False,decrease,True,decrease,True
+claudesonnet4.6,correlation,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence,↔,False,0.6210149794452494,True,False,decrease,False,decrease,True
+claudesonnet4.6,correlation,number of injection partners,receptive syringe sharing,↓,True,0.4880647156434336,True,False,increase,False,increase,True
+claudesonnet4.6,correlation,number of injection partners,injection frequency,↑,True,0.2953074447141598,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,number of injection partners,personal HCV infection status (RNA-positive),↑,True,0.17138267501590157,True,True,increase,True,increase,True
+claudesonnet4.6,correlation,number of HCV-positive injection partners,receptive syringe sharing,↔,False,0.11190178298294992,True,False,increase,False,increase,True
+claudesonnet4.6,correlation,personal HCV infection status (RNA-positive),non-fatal overdose incidence,↑,True,0.22913875507107642,True,True,increase,True,increase,True
+deepseek.v3.2,housing,current or recent homelessness,public injecting,↑,True,1.4838313334388906,True,True,increase,True,increase,True
+deepseek.v3.2,housing,current or recent homelessness,injection frequency,↑,True,-0.06681531047810609,True,False,increase,True,increase,True
+deepseek.v3.2,housing,current or recent homelessness,receptive syringe sharing,↑,True,0.009841737294006763,True,True,increase,True,increase,True
+deepseek.v3.2,housing,current or recent homelessness,personal HCV infection status (RNA-positive),↑,True,0.16877223323284007,True,True,increase,True,increase,True
+deepseek.v3.2,housing,current or recent homelessness,non-fatal overdose incidence,↑,True,,False,False,increase,True,increase,True
+deepseek.v3.2,housing,current or recent homelessness,number of injection partners,↑,True,0.07867813088187903,True,True,increase,True,increase,True
+deepseek.v3.2,housing,current or recent homelessness,number of HCV-positive injection partners,↔,False,,False,False,increase,False,increase,True
+deepseek.v3.2,housing,current or recent homelessness,engaging in opioid use disorder treatment,↔,False,,False,False,decrease,False,decrease,True
+deepseek.v3.2,housing,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting),↓,True,0.1474476419473002,True,False,increase,False,increase,True
+deepseek.v3.2,correlation,public injecting,personal HCV infection status (RNA-positive),↑,True,0.17825362283370094,True,True,increase,True,increase,True
+deepseek.v3.2,correlation,public injecting,non-fatal overdose incidence,↑,True,,False,False,increase,True,increase,True
+deepseek.v3.2,correlation,public injecting,receptive syringe sharing,↑,True,0.24171923262182868,True,True,increase,True,increase,True
+deepseek.v3.2,correlation,public injecting,injection frequency,↑,True,0.11274751059317893,True,True,increase,True,increase,True
+deepseek.v3.2,correlation,public injecting,engaging in opioid use disorder treatment,↓,True,,False,False,decrease,True,decrease,True
+deepseek.v3.2,correlation,receptive syringe sharing,personal HCV infection status (RNA-positive),↑,True,0.060615034086003064,True,True,increase,True,increase,True
+deepseek.v3.2,correlation,receptive syringe sharing,non-fatal overdose incidence,↑,True,,False,False,increase,True,increase,True
+deepseek.v3.2,correlation,engaging in opioid use disorder treatment,non-fatal overdose incidence,↓,True,,False,False,decrease,True,decrease,True
+deepseek.v3.2,correlation,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive),↓,True,,False,False,decrease,True,decrease,True
+deepseek.v3.2,correlation,engaging in opioid use disorder treatment,receptive syringe sharing,↓,True,,False,False,decrease,True,decrease,True
+deepseek.v3.2,correlation,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting),↓,True,,False,False,increase,False,increase,True
+deepseek.v3.2,correlation,engaging in opioid use disorder treatment,injection frequency,↓,True,,False,False,decrease,True,decrease,True
+deepseek.v3.2,correlation,injection frequency,personal HCV infection status (RNA-positive),↑,True,0.10827725068408471,True,True,increase,True,increase,True
+deepseek.v3.2,correlation,injection frequency,non-fatal overdose incidence,↑,True,,False,False,increase,True,increase,True
+deepseek.v3.2,correlation,injection frequency,receptive syringe sharing,↑,True,0.21207979513315076,True,True,increase,True,increase,True
+deepseek.v3.2,correlation,injection frequency,non-injection routes of opioid administration (smoking/snorting),↓,True,-0.07270160363816197,True,True,decrease,True,decrease,True
+deepseek.v3.2,correlation,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive),↓,True,0.11485956143066525,True,False,decrease,True,increase,False
+deepseek.v3.2,correlation,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence,↔,False,,False,False,increase,False,increase,True
+deepseek.v3.2,correlation,number of injection partners,receptive syringe sharing,↓,True,0.5608246816125578,True,False,increase,False,increase,True
+deepseek.v3.2,correlation,number of injection partners,injection frequency,↑,True,0.2842472289492237,True,True,increase,True,increase,True
+deepseek.v3.2,correlation,number of injection partners,personal HCV infection status (RNA-positive),↑,True,0.19764254907391865,True,True,increase,True,increase,True
+deepseek.v3.2,correlation,number of HCV-positive injection partners,receptive syringe sharing,↔,False,0.11056731927606378,True,False,increase,False,increase,True
+deepseek.v3.2,correlation,personal HCV infection status (RNA-positive),non-fatal overdose incidence,↑,True,,False,False,increase,True,increase,True
+gpt-oss-120b,housing,current or recent homelessness,public injecting,↑,True,2.270935682729449,True,True,increase,True,increase,True
+gpt-oss-120b,housing,current or recent homelessness,injection frequency,↑,True,-0.40900663016962385,True,False,increase,True,increase,True
+gpt-oss-120b,housing,current or recent homelessness,receptive syringe sharing,↑,True,-0.1349438677001476,True,False,increase,True,increase,True
+gpt-oss-120b,housing,current or recent homelessness,personal HCV infection status (RNA-positive),↑,True,-0.08411226483959816,True,False,increase,True,increase,True
+gpt-oss-120b,housing,current or recent homelessness,non-fatal overdose incidence,↑,True,0.18814135060619097,True,True,increase,True,increase,True
+gpt-oss-120b,housing,current or recent homelessness,number of injection partners,↑,True,0.011890331977301246,True,True,increase,True,increase,True
+gpt-oss-120b,housing,current or recent homelessness,number of HCV-positive injection partners,↔,False,-0.10196051828970623,True,False,increase,False,increase,True
+gpt-oss-120b,housing,current or recent homelessness,engaging in opioid use disorder treatment,↔,False,-0.5719151861094495,True,False,decrease,False,decrease,True
+gpt-oss-120b,housing,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting),↓,True,-0.04928088881033,True,True,increase,False,increase,True
+gpt-oss-120b,correlation,public injecting,personal HCV infection status (RNA-positive),↑,True,0.06873148667658284,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,public injecting,non-fatal overdose incidence,↑,True,0.1234089476218357,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,public injecting,receptive syringe sharing,↑,True,0.05693595287203636,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,public injecting,injection frequency,↑,True,-0.020345617254145222,True,False,increase,True,increase,True
+gpt-oss-120b,correlation,public injecting,engaging in opioid use disorder treatment,↓,True,-0.3881000002491586,True,True,decrease,True,decrease,True
+gpt-oss-120b,correlation,receptive syringe sharing,personal HCV infection status (RNA-positive),↑,True,0.2738383474128767,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,receptive syringe sharing,non-fatal overdose incidence,↑,True,0.16111229549917222,True,True,mixed,False,increase,False
+gpt-oss-120b,correlation,engaging in opioid use disorder treatment,non-fatal overdose incidence,↓,True,-0.1065326558190311,True,True,decrease,True,decrease,True
+gpt-oss-120b,correlation,engaging in opioid use disorder treatment,personal HCV infection status (RNA-positive),↓,True,0.00402220361326658,True,False,decrease,True,decrease,True
+gpt-oss-120b,correlation,engaging in opioid use disorder treatment,receptive syringe sharing,↓,True,-0.22411342974118276,True,True,decrease,True,decrease,True
+gpt-oss-120b,correlation,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting),↓,True,0.07766185561014821,True,False,mixed,False,increase,False
+gpt-oss-120b,correlation,engaging in opioid use disorder treatment,injection frequency,↓,True,-0.01609268073094017,True,True,decrease,True,decrease,True
+gpt-oss-120b,correlation,injection frequency,personal HCV infection status (RNA-positive),↑,True,0.18117590609764644,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,injection frequency,non-fatal overdose incidence,↑,True,0.42315474070301357,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,injection frequency,receptive syringe sharing,↑,True,0.06548714588992993,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,injection frequency,non-injection routes of opioid administration (smoking/snorting),↓,True,0.4473012531356753,True,False,decrease,True,decrease,True
+gpt-oss-120b,correlation,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive),↓,True,0.10006556378032391,True,False,decrease,True,decrease,True
+gpt-oss-120b,correlation,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence,↔,False,0.163382036108736,True,False,increase,False,decrease,False
+gpt-oss-120b,correlation,number of injection partners,receptive syringe sharing,↓,True,0.43049502616558666,True,False,increase,False,increase,True
+gpt-oss-120b,correlation,number of injection partners,injection frequency,↑,True,0.3531504032852299,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,number of injection partners,personal HCV infection status (RNA-positive),↑,True,0.4908322422354911,True,True,increase,True,increase,True
+gpt-oss-120b,correlation,number of HCV-positive injection partners,receptive syringe sharing,↔,False,0.09554253968776799,True,False,increase,False,increase,True
+gpt-oss-120b,correlation,personal HCV infection status (RNA-positive),non-fatal overdose incidence,↑,True,0.11847941955843103,True,True,uncertain,False,mixed,False

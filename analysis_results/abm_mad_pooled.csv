@@ -1,0 +1,4 @@
+Model,Housing,N_agents,N_rows,N_pairs,N_pairs_prespecified,mean_corr_difference,ci_lower,ci_upper,bootstrap_valid,bootstrap_total,ci_status
+claudesonnet4.6,Combined stable and homeless,224,448,10,10,0.10568375233464511,0.0820600615777451,0.14285605885308525,1000,1000,ok
+deepseek.v3.2,Combined stable and homeless,224,448,10,10,0.12615227631163445,0.09780714454152224,0.1679186450704935,1000,1000,ok
+gpt-oss-120b,Combined stable and homeless,224,448,10,10,0.12310453185346129,0.09946793588646642,0.16347461099219376,1000,1000,ok

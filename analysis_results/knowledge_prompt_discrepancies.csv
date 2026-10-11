@@ -1,0 +1,7 @@
+Model,exposure,outcome,direction_orig,direction_para,_merge,agreement,opposite_direction
+claudesonnet4.6,current or recent homelessness,non-injection routes of opioid administration (smoking/snorting),decrease,uncertain,both,False,False
+deepseek.v3.2,non-injection routes of opioid administration (smoking/snorting),personal HCV infection status (RNA-positive),decrease,increase,both,False,True
+gpt-oss-120b,engaging in opioid use disorder treatment,non-injection routes of opioid administration (smoking/snorting),mixed,increase,both,False,False
+gpt-oss-120b,non-injection routes of opioid administration (smoking/snorting),non-fatal overdose incidence,increase,decrease,both,False,True
+gpt-oss-120b,personal HCV infection status (RNA-positive),non-fatal overdose incidence,uncertain,mixed,both,False,False
+gpt-oss-120b,receptive syringe sharing,non-fatal overdose incidence,mixed,increase,both,False,False

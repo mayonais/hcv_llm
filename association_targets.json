@@ -1,0 +1,162 @@
+[
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "public injecting",
+    "expected": "↑"
+  },
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "injection frequency",
+    "expected": "↑"
+  },
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "receptive syringe sharing",
+    "expected": "↑"
+  },
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "personal HCV infection status (RNA-positive)",
+    "expected": "↑"
+  },
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "non-fatal overdose incidence",
+    "expected": "↑"
+  },
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "number of injection partners",
+    "expected": "↑"
+  },
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "number of HCV-positive injection partners",
+    "expected": "↔"
+  },
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "engaging in opioid use disorder treatment",
+    "expected": "↔"
+  },
+  {
+    "exposure": "current or recent homelessness",
+    "outcome": "non-injection routes of opioid administration (smoking/snorting)",
+    "expected": "↓"
+  },
+  {
+    "exposure": "public injecting",
+    "outcome": "personal HCV infection status (RNA-positive)",
+    "expected": "↑"
+  },
+  {
+    "exposure": "public injecting",
+    "outcome": "non-fatal overdose incidence",
+    "expected": "↑"
+  },
+  {
+    "exposure": "public injecting",
+    "outcome": "receptive syringe sharing",
+    "expected": "↑"
+  },
+  {
+    "exposure": "public injecting",
+    "outcome": "injection frequency",
+    "expected": "↑"
+  },
+  {
+    "exposure": "public injecting",
+    "outcome": "engaging in opioid use disorder treatment",
+    "expected": "↓"
+  },
+  {
+    "exposure": "receptive syringe sharing",
+    "outcome": "personal HCV infection status (RNA-positive)",
+    "expected": "↑"
+  },
+  {
+    "exposure": "receptive syringe sharing",
+    "outcome": "non-fatal overdose incidence",
+    "expected": "↑"
+  },
+  {
+    "exposure": "engaging in opioid use disorder treatment",
+    "outcome": "non-fatal overdose incidence",
+    "expected": "↓"
+  },
+  {
+    "exposure": "engaging in opioid use disorder treatment",
+    "outcome": "personal HCV infection status (RNA-positive)",
+    "expected": "↓"
+  },
+  {
+    "exposure": "engaging in opioid use disorder treatment",
+    "outcome": "receptive syringe sharing",
+    "expected": "↓"
+  },
+  {
+    "exposure": "engaging in opioid use disorder treatment",
+    "outcome": "non-injection routes of opioid administration (smoking/snorting)",
+    "expected": "↓"
+  },
+  {
+    "exposure": "engaging in opioid use disorder treatment",
+    "outcome": "injection frequency",
+    "expected": "↓"
+  },
+  {
+    "exposure": "injection frequency",
+    "outcome": "personal HCV infection status (RNA-positive)",
+    "expected": "↑"
+  },
+  {
+    "exposure": "injection frequency",
+    "outcome": "non-fatal overdose incidence",
+    "expected": "↑"
+  },
+  {
+    "exposure": "injection frequency",
+    "outcome": "receptive syringe sharing",
+    "expected": "↑"
+  },
+  {
+    "exposure": "injection frequency",
+    "outcome": "non-injection routes of opioid administration (smoking/snorting)",
+    "expected": "↓"
+  },
+  {
+    "exposure": "non-injection routes of opioid administration (smoking/snorting)",
+    "outcome": "personal HCV infection status (RNA-positive)",
+    "expected": "↓"
+  },
+  {
+    "exposure": "non-injection routes of opioid administration (smoking/snorting)",
+    "outcome": "non-fatal overdose incidence",
+    "expected": "↔"
+  },
+  {
+    "exposure": "number of injection partners",
+    "outcome": "receptive syringe sharing",
+    "expected": "↓"
+  },
+  {
+    "exposure": "number of injection partners",
+    "outcome": "injection frequency",
+    "expected": "↑"
+  },
+  {
+    "exposure": "number of injection partners",
+    "outcome": "personal HCV infection status (RNA-positive)",
+    "expected": "↑"
+  },
+  {
+    "exposure": "number of HCV-positive injection partners",
+    "outcome": "receptive syringe sharing",
+    "expected": "↔"
+  },
+  {
+    "exposure": "personal HCV infection status (RNA-positive)",
+    "outcome": "non-fatal overdose incidence",
+    "expected": "↑"
+  }
+]

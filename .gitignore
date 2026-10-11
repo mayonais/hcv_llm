@@ -207,3 +207,14 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Local archives, runtime dependencies, and source-survey downloads
+/archive/
+/tmp/
+/generated_outputs/
+/ICPSR_31421/
+/meps/
+/output/
+/jsonl/
+/analysis_changes.txt
+/original_file_hashes.json

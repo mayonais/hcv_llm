@@ -1,0 +1,54 @@
+{
+  "status": "verified",
+  "runtime_seconds": 216.13515400886536,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1",
+  "bootstrap_resamples": 1000,
+  "seed": 42,
+  "model_calls": 0,
+  "source_pdf": "Epidemics_arXiv_source__1_ (2).pdf",
+  "inputs": {
+    "outputs/outputs.csv": "c7eb772b8563c3b0466898cb74339c3dc91632a31f5e97fcac5b223105d68b4c",
+    "outputs/knowledge_outputs.csv": "c9e50fd005102f30fcd7b2f61ad566d9597f386e5a5fc2a746beea9f86535d6e",
+    "outputs/outputs_nyc_hanes.csv": "f8d10fc8dd2f749cb9f5fcf340eca7f325d17043a070c9c1fd684d09a39cf045",
+    "2018-09-13--06.02.24.events.csv": "819d31e912c1f1212a663df13d1617c6ce95e5a25d439c232c6efa421b7e12d5"
+  },
+  "code": {
+    "llm_prompts.ipynb": "3d4d1f4c04ed2bf3f53691e936f03ae7ed11f4415851daa3b34feb00bea0fd50",
+    "llm_outputs_analysis.ipynb": "683e28f40efd844e1ca10bc84165092b71e98ec0e17e7daee66d0ac454777a22",
+    "icpsr.ipynb": "3e47b2fdbfb69fb908410281ee6bc96e3253975f901797828b22baf8a3e72e2c",
+    "tables.ipynb": "4be819ca22cb7ff7e23ba7c419aa4d82284f8be7111548f50b9d3dcdb9215309",
+    "analysis_utils.py": "f238cca505e9119dd8f1c997594ff17e209ea7a020550c69776edf3a050238bf",
+    "association_targets.json": "a39b909b1ba4959b9a6cb0a66fbca7f4ef812dcc4e45bc76de07cd96183cfbb1",
+    "run_analysis.py": "ffa01760c6164b788c99f642bdd817c972496df84c71592a9592989ff8b0bc70",
+    "requirements.txt": "a1679be0021d1ce5487c1fc5f4e900cae51f37555a22e9fa3fcdbb8f739a0976"
+  },
+  "results": {
+    "abm_followup_audit.csv": "6e27e1e3b70bb9952d67fe779266e6634df884507796447e4cc8498341958068",
+    "abm_mad.csv": "ddc1e9c509a126bdbf3a8a839419008a0ee4bc1257fe72ff392cbecff45ba7e8",
+    "abm_mad_pooled.csv": "643fc0daebb70ad05ef3e9f74fcd193b4ef99e8e4d5c323c2d0c664d02115cba",
+    "abm_mad_tolerance_sweep.csv": "e56af1c568369c0fdadbc56f9069209436489b2c64691635db6585b9b6fe9f6d",
+    "empirical_auc.csv": "daf4ed47902263c02c1b0cdfc6bb970d4ce3ce4c91ec0c44c312bcf0de922bc9",
+    "empirical_mad.csv": "ea3d907e7783a2df312b9a0a77746420083d3719b46a7d8a0e303313f49a983b",
+    "housing_effects.csv": "9edb41b036d10401784a3525ebc65e5731584946ffb4a8268abf0157068c1726",
+    "knowledge_outputs_filtered.csv": "70ef452e6a51f4b530e32d970736670b802a8fc6c7a99d4c6f3cc697813629b3",
+    "knowledge_prompt_agreement.csv": "9534f092e2cd0bd0f26a8b25caf2f01c31998c5772c5ce6673083e7194a3ca28",
+    "knowledge_prompt_discrepancies.csv": "e84f113e228524be8f4eb1bb701189aa4aaec5af1bc7dc1bb706e43e31fc0a20",
+    "literature_summary.csv": "848db05511ccb568adbc031c4d5940e3b8d946fe42858c777643c063d6094e9b",
+    "literature_target_audit.csv": "49e993f22fcd3873a3e909c9becb1fc85ac128de796e13e77838e50659b26b20",
+    "pooled_outcome_correlations.csv": "71769b30fcec6ff4b1b036a6bccea8057062f08c67d62e1038033509b1645722",
+    "prompt_magnitude.csv": "ec365c720240edd34a219a2f4ca21368471ef3c16eeec2501c4658097b4dd476",
+    "prompt_semantic.csv": "c5b3c67b099a8a9a74b335faa670f1c057534836bab7a720ddcd694674dd3d01",
+    "prompt_summary.csv": "dd9506bbaf47a3d53c305e7bedabc89ce28274e4d869168d5b3f7a40755c10be",
+    "table3.csv": "b8500a9aca40188a7becd53fe57ba6fe178958cbf006b8a38d4b389becd912fa",
+    "table_s3.csv": "dcf43aeedb633a3918d1b670ae96ced9cd3caf6f45c0142b261b183394bc8e7a"
+  },
+  "publication_checks": {
+    "tables_and_figures_regenerated": true,
+    "saved_results_validated_with_and_without_archive": true,
+    "date": "2026-10-11",
+    "model_calls": 0
+  }
+}

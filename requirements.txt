@@ -1,0 +1,7 @@
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+# Optional generation only: boto3
+# Optional token diagnostics only: tiktoken

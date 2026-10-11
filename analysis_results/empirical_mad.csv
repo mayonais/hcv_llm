@@ -1,0 +1,4 @@
+Model,N,Empirical_MAD,MAD_lower_95,MAD_upper_95,Bootstrap_B,Bootstrap_strata,N_covariates,bootstrap_covariates_min,bootstrap_covariates_max,bootstrap_valid,bootstrap_total
+claudesonnet4.6,70,0.1695712981771852,0.10539597182346293,0.26717539546208885,1000,HCV antibody status,12,12,12,1000,1000
+deepseek.v3.2,70,0.15386015804700962,0.1024418833557185,0.2625216911156356,1000,HCV antibody status,12,12,12,1000,1000
+gpt-oss-120b,70,0.17693313871259844,0.1089764359483854,0.28284359246344404,1000,HCV antibody status,12,12,12,1000,1000
