@@ -78,9 +78,9 @@ The runner checks the directional-scoring counts, statistical helpers, bootstrap
 
 `analysis_results/` contains the computed CSV summaries and audits, including `table3.csv`, `table_s3.csv`, `literature_target_audit.csv`, `abm_mad_pooled.csv`, `empirical_mad.csv`, and `empirical_auc.csv`. `verification_manifest.json` records the verification environment and input, code, and result hashes.
 
-`figures/` contains the housing comparison (`Fig2`), generated-outcome correlation comparison (`FigS1`), condition-specific ABM comparison (`FigS2`), and observation-timing sensitivity (`FigS3`). Separate captions are in `figure_captions.txt`.
+`figures/` contains the housing comparison (`Fig2.png`), generated-outcome correlation comparison (`FigS1.png`), condition-specific ABM comparison (`FigS2.png`), and observation-timing sensitivity (`FigS3.png`). Only PNG exports are tracked on GitHub.
 
-Artwork is formatted using the [journal's artwork guidelines](https://link.springer.com/journal/42001/submission-guidelines#Instructions%20for%20Authors_Artwork%20and%20Illustrations%20Guidelines). Exports include EPS with embedded fonts, PDF, SVG, and 600-dpi RGB PNG/TIFF. Figures use Arial lettering of 8–10 pt at 174 mm width, heights below 234 mm, and patterns or markers alongside color. `artwork_checks.json` records export dimensions and lettering checks. Captions remain separate from the artwork.
+Artwork is formatted using the [journal's artwork guidelines](https://link.springer.com/journal/42001/submission-guidelines#Instructions%20for%20Authors_Artwork%20and%20Illustrations%20Guidelines). Figures use Arial lettering of 8–10 pt at 174 mm width, heights below 234 mm, and 600-dpi RGB PNG exports. Running the plotting code also creates EPS with embedded fonts, PDF, SVG, and TIFF copies locally. Those files, separate captions, and `artwork_checks.json` remain local and are excluded from Git.
 
 ## Optional model generation
 

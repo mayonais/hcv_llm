@@ -218,3 +218,7 @@ __marimo__/
 /jsonl/
 /analysis_changes.txt
 /original_file_hashes.json
+
+# Only PNG figure exports are published; other formats remain local.
+/figures/*
+!/figures/*.png

@@ -125,53 +125,85 @@ def _knowledge_text(row):
 
 
 def draw_association_table(kind, knowledge, housing, correlations):
+    """Retain the original banded comparison layout at final publication size."""
     configure_artwork()
     pairs = [pair for pair in EXPECTED if (pair[0] == TERMS["Homeless"]) == (kind == "housing")]
-    # Physical mm coordinates make font sizes independent of the number of rows.
-    row_mm, header_mm, legend_mm, margin_mm = 8.6, 17.5, 10, 2
+    row_mm, header_mm, legend_mm, margin_mm = 8.1, 19, (17.5 if kind == "housing" else 21), 1.5
     height = 2*margin_mm + header_mm + row_mm*len(pairs) + legend_mm
     fig = plt.figure(figsize=(WIDTH_MM/MM_PER_INCH, height/MM_PER_INCH), dpi=100)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, WIDTH_MM); ax.set_ylim(0, height); ax.axis("off")
-    left, label_w, expected_w, cell_w = 3, 40, 8, 20
+    left, label_w, expected_w, knowledge_w, output_w = 1.5, 53.5, 10, 16.5, 19
     knowledge_x = left+label_w+expected_w
-    output_x = knowledge_x+3*cell_w
-    group_y = height-margin_mm-2
-    ax.text(knowledge_x+1.5*cell_w, group_y, "LLM knowledge probe", ha="center", va="center", fontsize=9, weight="bold")
-    ax.text(output_x+1.5*cell_w, group_y, "LLM-generated outputs", ha="center", va="center", fontsize=9, weight="bold")
-    ax.text(left+1, height-10, "Variable pair", va="center", fontsize=8, weight="bold")
-    ax.text(left+label_w+expected_w/2, height-10, "Exp.\ndir.", ha="center", va="center", fontsize=8)
-    headers = ["Claude\nSonnet 4.6", "DeepSeek\nv3.2", "GPT-OSS\n120B"]
-    for origin in [knowledge_x, output_x]:
-        for j, label in enumerate(headers):
-            ax.text(origin+(j+.5)*cell_w, height-9, label, ha="center", va="center", fontsize=8, linespacing=1)
-    ax.text(knowledge_x+1.5*cell_w, height-15, "Direction, evidence, estimate", ha="center", va="center", fontsize=8)
-    generated_label = "Paired $d_z$ (95% bootstrap CI)" if kind == "housing" else "Spearman rank correlation"
-    ax.text(output_x+1.5*cell_w, height-15, generated_label, ha="center", va="center", fontsize=8)
+    output_x = knowledge_x+3*knowledge_w+1
     body_top = height-margin_mm-header_mm
+    palette = {"match": "#8BCB87", "opposite": "#E57373", "undefined": "#FBDCA3",
+               "unscored": "#ECEFF1", "uncertain": "#A8D8A4"}
     cell_records = []
 
-    def cell(x, y, text, status):
-        face, hatch = STYLES[status]
-        ax.add_patch(Rectangle((x+.3, y+.2), cell_w-.6, row_mm-.4,
-                               facecolor=face, edgecolor="#444444", linewidth=.35, hatch=hatch))
-        artist = ax.text(x+cell_w/2, y+row_mm/2, text, ha="center", va="center", fontsize=8,
-                        linespacing=.95, color="#111111",
-                        bbox={"facecolor": face, "edgecolor": "none", "pad": .15})
-        cell_records.append((artist, cell_w-.8, row_mm-.4))
+    # Original group headings, model columns, and full-width gray method band.
+    ax.text(knowledge_x+1.5*knowledge_w, height-3, "LLM Knowledge Probe",
+            ha="center", va="center", fontsize=9, weight="bold")
+    ax.text(output_x+1.5*output_w, height-3, "LLM-Generated Outputs",
+            ha="center", va="center", fontsize=9, weight="bold")
+    ax.text(left+.8, height-9, "Variable pairs", va="center", fontsize=8, weight="bold")
+    ax.text(left+label_w+expected_w-1, height-9, "Expected\nDirection",
+            ha="right", va="center", fontsize=8, weight="bold", linespacing=1)
+    headers = ["Claude\nSonnet 4.6", "DeepSeek\nv3.2", "GPT-OSS\n120B"]
+    for origin, width in [(knowledge_x, knowledge_w), (output_x, output_w)]:
+        for j, label in enumerate(headers):
+            ax.text(origin+(j+.5)*width, height-9, label, ha="center", va="center",
+                    fontsize=8, linespacing=1)
+    ax.add_patch(Rectangle((left, body_top+.45), WIDTH_MM-2*left, 5.2,
+                           facecolor="#B0B8C4", edgecolor="none"))
+    ax.text(knowledge_x+1.5*knowledge_w, body_top+3, "Direction + evidence + estimate",
+            ha="center", va="center", fontsize=8, style="italic")
+    method = "Paired $d_z$ + 95% bootstrap CI" if kind == "housing" else "Spearman's rank correlation"
+    ax.text(output_x+1.5*output_w, body_top+3, method,
+            ha="center", va="center", fontsize=8, style="italic")
+
+    def background(x, y, width, row_height, status):
+        patch = Rectangle((x, y), width, row_height, facecolor=palette[status],
+                          edgecolor="none", linewidth=0, zorder=1)
+        ax.add_patch(patch)
+        if status == "opposite":
+            # Opaque pale crosses preserve the old appearance in vector EPS.
+            for y0, y1 in [(y, y+row_height), (y+row_height, y)]:
+                ax.plot([x, x+width], [y0, y1], color="#F6CCCC", linewidth=.65, zorder=2)
+        elif status == "unscored":
+            for offset in np.arange(-row_height, width+row_height, 1.5):
+                line, = ax.plot([x+offset, x+offset+row_height], [y, y+row_height],
+                                color="#C4CCD1", linewidth=.35, zorder=2)
+                line.set_clip_path(patch)
+
+    def cell(x, y, width, text, status):
+        background(x+.2, y+.2, width-.4, row_mm-.4, status)
+        artist = ax.text(x+width/2, y+row_mm/2, text, ha="center", va="center",
+                        fontsize=8, linespacing=.93, color="#000000", zorder=3)
+        cell_records.append((artist, width-.8, row_mm-.4))
 
     for index, (exposure, outcome) in enumerate(pairs):
         y = body_top-(index+1)*row_mm
         a, b = COLUMNS[exposure], COLUMNS[outcome]
         expected = EXPECTED[(exposure, outcome)]
-        ax.text(left+1, y+row_mm/2, f"{NAMES[a]}\n~ {NAMES[b]}", ha="left", va="center", fontsize=8, linespacing=1)
-        ax.text(left+label_w+expected_w/2, y+row_mm/2, expected, ha="center", va="center", fontsize=10)
+        if index % 2 == 0:
+            ax.add_patch(Rectangle((left, y), WIDTH_MM-2*left, row_mm,
+                                   facecolor="#F0F4F8", edgecolor="none", zorder=0))
+        ax.add_patch(Rectangle((left+label_w, y), expected_w, row_mm,
+                               facecolor="#ECEFF1", edgecolor="none", zorder=0))
+        label = ax.text(left+.6, y+row_mm/2,
+                        f"{NAMES[a]} ~ {NAMES[b][0].lower()+NAMES[b][1:]}", ha="left", va="center",
+                        fontsize=8, color="#000000", zorder=3)
+        cell_records.append((label, label_w-1.2, row_mm-.4))
+        ax.text(left+label_w+expected_w/2, y+row_mm/2, expected,
+                ha="center", va="center", fontsize=10, color="#000000", zorder=3)
         for j, model in enumerate(MODELS):
             rows = knowledge.loc[knowledge.Model.eq(model)&knowledge.exposure.eq(exposure)&knowledge.outcome.eq(outcome)]
             if len(rows) != 1:
                 raise ValueError(f"Expected one knowledge record: {model}/{exposure}/{outcome}")
             row = rows.iloc[0]
-            cell(knowledge_x+j*cell_w, y, _knowledge_text(row), _status(expected, direction=row.direction))
+            cell(knowledge_x+j*knowledge_w, y, knowledge_w, _knowledge_text(row),
+                 _status(expected, direction=row.direction))
             if kind == "housing":
                 row = housing.loc[housing.Model.eq(model)&housing.Variable.eq(b)&housing.Paraphrase.eq(0)].iloc[0]
                 value = row.cohens_d
@@ -186,17 +218,23 @@ def draw_association_table(kind, knowledge, housing, correlations):
                     ((correlations.var1.eq(a)&correlations.var2.eq(b))|(correlations.var1.eq(b)&correlations.var2.eq(a)))].iloc[0]
                 value = row.correlation
                 text = "—" if not np.isfinite(value) else f"{_arrow(value)} {value:.2f}"
-            cell(output_x+j*cell_w, y, text, _status(expected, value=value))
-    legend = [("match", "Matches expected direction"), ("opposite", "Opposite direction"),
-              ("undefined", "Non-estimable"), ("unscored", "No fixed benchmark"),
-              ("uncertain", "Mixed/uncertain answer")]
+            cell(output_x+j*output_w, y, output_w, text, _status(expected, value=value))
+    separator = knowledge_x+3*knowledge_w+.5
+    ax.plot([separator, separator], [body_top-len(pairs)*row_mm, height-5.5],
+            color="#D0D7DB", linewidth=.5, zorder=4)
+
+    legend = [("match", "Matches expected direction"),
+              ("opposite", "Opposite of expected direction"),
+              ("undefined", "Non-estimable effect" if kind == "housing" else "Undefined correlation"),
+              ("uncertain", "Mixed (↔) or uncertain (—) direction"),
+              ("unscored", "No fixed directional benchmark")]
+    if kind == "housing":
+        legend = [item for item in legend if item[0] != "uncertain"]
     for index, (status, label) in enumerate(legend):
-        x = left+(index%3)*56
-        y = 7.7-(index//3)*4.5
-        face, hatch = STYLES[status]
-        ax.add_patch(Rectangle((x, y-1.3), 4, 2.6, facecolor=face, edgecolor="#444444", linewidth=.35, hatch=hatch))
-        ax.text(x+5.5, y, label, va="center", fontsize=8)
-    # Check the text physically fits its cell before any export.
+        x, y = left+2, legend_mm-3.2-index*3.5
+        background(x, y-1, 7, 2, status)
+        ax.text(x+8.5, y, label, va="center", fontsize=8, color="#000000", zorder=3)
+
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     pixels_per_mm = fig.dpi/MM_PER_INCH
