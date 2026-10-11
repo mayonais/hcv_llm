@@ -16,6 +16,7 @@ MM_PER_INCH = 25.4
 WIDTH_MM = 174
 RASTER_DPI = 600
 FONT_PT = 8
+DETAIL_FONT_PT = 7
 STYLES = {
     "match": ("#D8EAD4", ""),
     "opposite": ("#F0CBCB", "xx"),
@@ -49,7 +50,7 @@ def configure_artwork():
     })
 
 
-def export_artwork(fig, name):
+def export_artwork(fig, name, minimum_font_pt=8):
     """Keep the page size fixed; RGB raster alternatives accompany vector EPS/PDF."""
     width_mm, height_mm = fig.get_size_inches() * MM_PER_INCH
     if abs(width_mm-WIDTH_MM) > .01 or height_mm > 234:
@@ -71,8 +72,8 @@ def export_artwork(fig, name):
         if artist in hidden_ticks or not artist.get_visible() or not artist.get_text():
             continue
         fonts.append(artist.get_fontsize())
-        if not 8 <= artist.get_fontsize() <= 12:
-            raise ValueError(f"Lettering outside 8--12 pt: {artist.get_text()}")
+        if not minimum_font_pt <= artist.get_fontsize() <= 12:
+            raise ValueError(f"Lettering outside the selected size range: {artist.get_text()}")
         box = artist.get_window_extent(renderer)
         if box.x0 < page.x0-.5 or box.y0 < page.y0-.5 or box.x1 > page.x1+.5 or box.y1 > page.y1+.5:
             raise ValueError(f"Text outside page in {name}: {artist.get_text()}")
@@ -124,16 +125,20 @@ def _knowledge_text(row):
     return "\n".join(lines)
 
 
+def _pair_label(a, b):
+    return f"{NAMES[a]} ~ {NAMES[b][0].lower()+NAMES[b][1:]}"
+
+
 def draw_association_table(kind, knowledge, housing, correlations):
     """Retain the original banded comparison layout at final publication size."""
     configure_artwork()
     pairs = [pair for pair in EXPECTED if (pair[0] == TERMS["Homeless"]) == (kind == "housing")]
-    row_mm, header_mm, legend_mm, margin_mm = 8.1, 19, (17.5 if kind == "housing" else 21), 1.5
+    row_mm, header_mm, legend_mm, margin_mm = 8.3, 19, (17.5 if kind == "housing" else 21), 1.5
     height = 2*margin_mm + header_mm + row_mm*len(pairs) + legend_mm
     fig = plt.figure(figsize=(WIDTH_MM/MM_PER_INCH, height/MM_PER_INCH), dpi=100)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, WIDTH_MM); ax.set_ylim(0, height); ax.axis("off")
-    left, label_w, expected_w, knowledge_w, output_w = 1.5, 53.5, 10, 16.5, 19
+    left, label_w, expected_w, knowledge_w, output_w = 1.5, 52.8, 8, 17.2, 19.2
     knowledge_x = left+label_w+expected_w
     output_x = knowledge_x+3*knowledge_w+1
     body_top = height-margin_mm-header_mm
@@ -178,9 +183,15 @@ def draw_association_table(kind, knowledge, housing, correlations):
 
     def cell(x, y, width, text, status):
         background(x+.2, y+.2, width-.4, row_mm-.4, status)
-        artist = ax.text(x+width/2, y+row_mm/2, text, ha="center", va="center",
-                        fontsize=8, linespacing=.93, color="#000000", zorder=3)
-        cell_records.append((artist, width-.8, row_mm-.4))
+        lines = text.split("\n")
+        # Keep the direction/effect at 8 pt and reduce only estimate/CI detail.
+        spacing_mm = 2.35
+        for index, line in enumerate(lines):
+            offset = ((len(lines)-1)/2-index)*spacing_mm
+            artist = ax.text(x+width/2, y+row_mm/2+offset, line, ha="center", va="center",
+                             fontsize=8 if index == 0 else DETAIL_FONT_PT,
+                             color="#000000", zorder=3)
+            cell_records.append((artist, width-.8, row_mm-.4))
 
     for index, (exposure, outcome) in enumerate(pairs):
         y = body_top-(index+1)*row_mm
@@ -191,10 +202,10 @@ def draw_association_table(kind, knowledge, housing, correlations):
                                    facecolor="#F0F4F8", edgecolor="none", zorder=0))
         ax.add_patch(Rectangle((left+label_w, y), expected_w, row_mm,
                                facecolor="#ECEFF1", edgecolor="none", zorder=0))
-        label = ax.text(left+.6, y+row_mm/2,
-                        f"{NAMES[a]} ~ {NAMES[b][0].lower()+NAMES[b][1:]}", ha="left", va="center",
+        label = ax.text(left+.3, y+row_mm/2,
+                        _pair_label(a, b), ha="left", va="center",
                         fontsize=8, color="#000000", zorder=3)
-        cell_records.append((label, label_w-1.2, row_mm-.4))
+        cell_records.append((label, label_w-.6, row_mm-.4))
         ax.text(left+label_w+expected_w/2, y+row_mm/2, expected,
                 ha="center", va="center", fontsize=10, color="#000000", zorder=3)
         for j, model in enumerate(MODELS):
@@ -242,7 +253,7 @@ def draw_association_table(kind, knowledge, housing, correlations):
         bounds = artist.get_window_extent(renderer)
         if bounds.width > width*pixels_per_mm or bounds.height > row_height*pixels_per_mm:
             raise ValueError(f"Text does not fit a publication cell: {artist.get_text()}")
-    export_artwork(fig, "Fig2" if kind == "housing" else "FigS1")
+    export_artwork(fig, "Fig2" if kind == "housing" else "FigS1", minimum_font_pt=DETAIL_FONT_PT)
 
 
 def plot_timing_sensitivity(sweep):
@@ -293,7 +304,7 @@ def plot_abm_correlations(results):
                        color=colors[row.ModelLabel], edgecolors="#111111", linewidths=.4, zorder=3)
         ax.set_yticks(y, labels, fontsize=8); ax.set_ylim(-.5,len(frame)-.5); ax.invert_yaxis()
         ax.set_xlim(-1,1); ax.set_xticks([-1,0,1])
-        ax.set_xlabel(f"{NAMES[a]}\n~ {NAMES[b]}", fontsize=8, labelpad=2)
+        ax.set_xlabel(_pair_label(a, b), fontsize=8, labelpad=2)
         ax.axvline(0, linewidth=.35, color="#555555", zorder=0)
         ax.spines[["top", "right"]].set_visible(False)
         ax.text(.03,.92,letter,transform=ax.transAxes,va="top",fontsize=9,weight="bold")

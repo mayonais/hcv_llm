@@ -80,7 +80,7 @@ The runner checks the directional-scoring counts, statistical helpers, bootstrap
 
 `figures/` contains the housing comparison (`Fig2.png`), generated-outcome correlation comparison (`FigS1.png`), condition-specific ABM comparison (`FigS2.png`), and observation-timing sensitivity (`FigS3.png`). Only PNG exports are tracked on GitHub.
 
-Artwork is formatted using the [journal's artwork guidelines](https://link.springer.com/journal/42001/submission-guidelines#Instructions%20for%20Authors_Artwork%20and%20Illustrations%20Guidelines). Figures use Arial lettering of 8–10 pt at 174 mm width, heights below 234 mm, and 600-dpi RGB PNG exports. Running the plotting code also creates EPS with embedded fonts, PDF, SVG, and TIFF copies locally. Those files, separate captions, and `artwork_checks.json` remain local and are excluded from Git.
+Artwork uses the [journal's artwork guidelines](https://link.springer.com/journal/42001/submission-guidelines#Instructions%20for%20Authors_Artwork%20and%20Illustrations%20Guidelines) for sizing and exports. Figures use Arial labels of 8–10 pt at 174 mm width, heights below 234 mm, and 600-dpi RGB PNG exports. Association estimates and confidence intervals in Fig2 and FigS1 use 7 pt as requested; this is below the journal's usual recommended 8–12 pt range. Running the plotting code also creates EPS with embedded fonts, PDF, SVG, and TIFF copies locally. Those files, separate captions, and `artwork_checks.json` remain local and are excluded from Git.
 
 ## Optional model generation
 

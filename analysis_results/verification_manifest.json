@@ -20,7 +20,7 @@
     "icpsr.ipynb": "3e47b2fdbfb69fb908410281ee6bc96e3253975f901797828b22baf8a3e72e2c",
     "tables.ipynb": "36b578a7dc3ee141a20d0b742c4d0063a6f139273a2c7ba510fbe9e4b266f7f3",
     "analysis_utils.py": "7294779b3351450013b867351cf963d19faeda4405f7befa7aaad23ce3f43963",
-    "artwork.py": "cba7f3c89e139e911216156c65bee4e4cb8ed1b8674daf976aac2d442c9657f1",
+    "artwork.py": "8743338d825f4275d6c11bf10f6f4263ff9c5185c7264fbecc4a9d4be99effec",
     "association_targets.json": "a39b909b1ba4959b9a6cb0a66fbca7f4ef812dcc4e45bc76de07cd96183cfbb1",
     "run_analysis.py": "5e6190655115c7463869c901bef1a2b11e440908bdcf6edec0b1575d8a55d185",
     "requirements.txt": "0bb0f9521db3982133177b218bf3f30bcbf098814b33e6329b54e5443931ef6b"
@@ -56,9 +56,9 @@
     "status": "passed",
     "statistical_csvs_unchanged": true,
     "figures": {
-      "Fig2.png": "be254752e137ca538b5be8b6ccbd975d705e834799b109c830ee3360bd543174",
-      "FigS1.png": "3f1a6020f3698a60f64a7280f4e7ad3131df357affd1bf3a23c9d8d56ade4109",
-      "FigS2.png": "03b18b4c0cc50d7e95c31c97deb2dc684925d7cce3e3b67ae2878ec82843110c",
+      "Fig2.png": "7be0c7ddf3722964874ebf39d5406f6bb1e3b2484961569bfcbea9eeec3920d6",
+      "FigS1.png": "3c7c16b618f86b87497656da0e7dba82e3b1dc1af3ac600e18a5f133e4bb96e5",
+      "FigS2.png": "c52807d5a66ca5cbccf0057eefe5fdb39ab60632d143bfcf5187143984b7698a",
       "FigS3.png": "bf8b6614038547980fd98a1df0481f9731a978ce1acc3520e2591bc1694794c7"
     }
   }
