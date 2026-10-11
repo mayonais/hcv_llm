@@ -1,6 +1,6 @@
 """Shared paper definitions and reporting for the copied notebooks.
 
-Source: Epidemics_arXiv_source__1_ (2).pdf, Tables 2, 3, and S1.
+Definitions follow the study's methods and association benchmarks.
 The raw CSVs are never modified. Direction scoring uses unrounded estimates.
 """
 from itertools import combinations

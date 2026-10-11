@@ -8,7 +8,6 @@
   "bootstrap_resamples": 1000,
   "seed": 42,
   "model_calls": 0,
-  "source_pdf": "Epidemics_arXiv_source__1_ (2).pdf",
   "inputs": {
     "outputs/outputs.csv": "c7eb772b8563c3b0466898cb74339c3dc91632a31f5e97fcac5b223105d68b4c",
     "outputs/knowledge_outputs.csv": "c9e50fd005102f30fcd7b2f61ad566d9597f386e5a5fc2a746beea9f86535d6e",
@@ -17,13 +16,14 @@
   },
   "code": {
     "llm_prompts.ipynb": "3d4d1f4c04ed2bf3f53691e936f03ae7ed11f4415851daa3b34feb00bea0fd50",
-    "llm_outputs_analysis.ipynb": "683e28f40efd844e1ca10bc84165092b71e98ec0e17e7daee66d0ac454777a22",
+    "llm_outputs_analysis.ipynb": "47e6f9d57b5637c0718596eea8bcb26f3ea0282abb05562169733a9202f2ef54",
     "icpsr.ipynb": "3e47b2fdbfb69fb908410281ee6bc96e3253975f901797828b22baf8a3e72e2c",
-    "tables.ipynb": "4be819ca22cb7ff7e23ba7c419aa4d82284f8be7111548f50b9d3dcdb9215309",
-    "analysis_utils.py": "f238cca505e9119dd8f1c997594ff17e209ea7a020550c69776edf3a050238bf",
+    "tables.ipynb": "36b578a7dc3ee141a20d0b742c4d0063a6f139273a2c7ba510fbe9e4b266f7f3",
+    "analysis_utils.py": "7294779b3351450013b867351cf963d19faeda4405f7befa7aaad23ce3f43963",
+    "artwork.py": "d8df6ee589a7a6cf0bb336b496d8476800de7c1043fe2d2bbe7f298d0cf25975",
     "association_targets.json": "a39b909b1ba4959b9a6cb0a66fbca7f4ef812dcc4e45bc76de07cd96183cfbb1",
-    "run_analysis.py": "ffa01760c6164b788c99f642bdd817c972496df84c71592a9592989ff8b0bc70",
-    "requirements.txt": "a1679be0021d1ce5487c1fc5f4e900cae51f37555a22e9fa3fcdbb8f739a0976"
+    "run_analysis.py": "5e6190655115c7463869c901bef1a2b11e440908bdcf6edec0b1575d8a55d185",
+    "requirements.txt": "0bb0f9521db3982133177b218bf3f30bcbf098814b33e6329b54e5443931ef6b"
   },
   "results": {
     "abm_followup_audit.csv": "6e27e1e3b70bb9952d67fe779266e6634df884507796447e4cc8498341958068",
@@ -50,5 +50,34 @@
     "saved_results_validated_with_and_without_archive": true,
     "date": "2026-10-11",
     "model_calls": 0
+  },
+  "artwork_verification": {
+    "date": "2026-10-11",
+    "status": "passed",
+    "statistical_csvs_unchanged": true,
+    "figures": {
+      "artwork_checks.json": "5b6d968fa285f612c79c69fe9b591d51155833178e5b6317bc11738924021266",
+      "Fig2.eps": "71064d57a92d1b83be3f4bcabcad6207f95721beaffe93ab4328251c61e18d19",
+      "Fig2.pdf": "626c663289b7927e62da94951295d478ef5ede3bf971dbe3ef699a54deada296",
+      "Fig2.png": "541129b26771c4de5fadcd377e933395cc083fcc8e77ba5f506ae055990c8bc2",
+      "Fig2.svg": "90766b2cc3d9d79d926f26e20ac5ce669c285926e7e49c9ab93f47aa4d2fbe92",
+      "Fig2.tif": "daf3b042eae61c8977363fa0aef4025911d9223cfda6d07aea90d432a642e330",
+      "FigS1.eps": "ba3d0e80c6f262121b87d0a83171999269c8456081ce21ec27ccefcaf1f57505",
+      "FigS1.pdf": "388965249cf39b0453775955cc65cf41258bc949dfae7624b0a2915bc7f87a10",
+      "FigS1.png": "bf406ec4cfcfadaa29480d261deef084e27497eacd353238b540290247168232",
+      "FigS1.svg": "81ae23762205604f51205afb51cf210d0c290af528334583f0e7ded316e26139",
+      "FigS1.tif": "21c0fd02ae9c61740583a3c6f3ccfe138fad583612a64bc10c8cb5ce519ed082",
+      "FigS2.eps": "8c00bea7f0e7d41cd3455d6ba9cb672ecbdbc5538f55d07c40250b51f2eda50b",
+      "FigS2.pdf": "e4e964df950083ce40d6b4429f19fe7f07aa65ee304fa70d4173421a077a7fbd",
+      "FigS2.png": "03b18b4c0cc50d7e95c31c97deb2dc684925d7cce3e3b67ae2878ec82843110c",
+      "FigS2.svg": "6df5b2399724b2538942f702763d30d72cb030e5a154a895fd8180056677f5e2",
+      "FigS2.tif": "1f7d93050d0b19e573d9ef2d5cff454a3401250e5f0c1d282d805e903f4d8059",
+      "FigS3.eps": "648ed929447ed1fdddd4b89f7ee63af19888a6f047ad1fceac4e069c2a3b3633",
+      "FigS3.pdf": "8d7c277039cf1042059a063979f38d0ce6227f4ecadcb8568c59f2da4354fa03",
+      "FigS3.png": "bf8b6614038547980fd98a1df0481f9731a978ce1acc3520e2591bc1694794c7",
+      "FigS3.svg": "f2906528c3419c775dc06a068a9bb7d7d5034497f278449423a70997d75c8985",
+      "FigS3.tif": "4b884218149569e1ad6c6fb7e6df42d4f9f11b9c369d9fd5ba2a9dbee170a009",
+      "figure_captions.txt": "9034e3fefabc673d9cb63fcf2a7c14abbe1724425bbf007743525a6c6b0a8453"
+    }
   }
 }

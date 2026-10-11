@@ -138,9 +138,8 @@ if __name__=="__main__":
     manifest={"status":"verified","runtime_seconds":time.time()-start,
               "python":sys.version,"platform":platform.platform(),"numpy":np.__version__,"pandas":pd.__version__,
               "bootstrap_resamples":1000,"seed":42,"model_calls":0,
-              "source_pdf":"Epidemics_arXiv_source__1_ (2).pdf",
               "inputs":{p.relative_to(ROOT).as_posix():sha(p) for p in [ROOT/"outputs/outputs.csv",ROOT/"outputs/knowledge_outputs.csv",ROOT/"outputs/outputs_nyc_hanes.csv",ROOT/"2018-09-13--06.02.24.events.csv"]},
-              "code":{name:sha(ROOT/name) for name in NAMES+["analysis_utils.py","association_targets.json","run_analysis.py"]},
+              "code":{name:sha(ROOT/name) for name in NAMES+["analysis_utils.py","artwork.py","association_targets.json","run_analysis.py","requirements.txt"]},
               "results":{p.name:sha(p) for p in RESULT_DIR.glob("*.csv")}}
     (RESULT_DIR/"verification_manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
     print(f"All checks passed in {time.time()-start:.1f} seconds; original files unchanged.",flush=True)

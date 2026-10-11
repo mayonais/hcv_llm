@@ -1,0 +1,63 @@
+{
+  "Fig2": {
+    "figure": "Fig2",
+    "width_mm": 174.0,
+    "height_mm": 108.89999999999998,
+    "minimum_font_pt": 8.0,
+    "maximum_font_pt": 10.0,
+    "raster_dpi": 600,
+    "raster_mode": "RGB",
+    "graphics_program": "Matplotlib",
+    "embedded_pdf_fonts": [
+      "/COLORY+DejaVuSans-Oblique",
+      "/CTLJQE+Arial-BoldMT",
+      "/GFOUBN+ArialMT"
+    ],
+    "eps_fonts_embedded": true
+  },
+  "FigS2": {
+    "figure": "FigS2",
+    "width_mm": 174.0,
+    "height_mm": 220.0,
+    "minimum_font_pt": 8.0,
+    "maximum_font_pt": 9.0,
+    "raster_dpi": 600,
+    "raster_mode": "RGB",
+    "graphics_program": "Matplotlib",
+    "embedded_pdf_fonts": [
+      "/CXPASX+ArialMT",
+      "/FMMFLR+Arial-BoldMT"
+    ],
+    "eps_fonts_embedded": true
+  },
+  "FigS3": {
+    "figure": "FigS3",
+    "width_mm": 174.0,
+    "height_mm": 130.0,
+    "minimum_font_pt": 8.0,
+    "maximum_font_pt": 9.0,
+    "raster_dpi": 600,
+    "raster_mode": "RGB",
+    "graphics_program": "Matplotlib",
+    "embedded_pdf_fonts": [
+      "/MWOAYY+Arial-BoldMT",
+      "/QJFTCP+ArialMT"
+    ],
+    "eps_fonts_embedded": true
+  },
+  "FigS1": {
+    "figure": "FigS1",
+    "width_mm": 174.0,
+    "height_mm": 229.29999999999995,
+    "minimum_font_pt": 8.0,
+    "maximum_font_pt": 10.0,
+    "raster_dpi": 600,
+    "raster_mode": "RGB",
+    "graphics_program": "Matplotlib",
+    "embedded_pdf_fonts": [
+      "/CTLJQE+Arial-BoldMT",
+      "/ESQZNG+ArialMT"
+    ],
+    "eps_fonts_embedded": true
+  }
+}

@@ -11,6 +11,7 @@ This repository evaluates LLM-generated behavioral outputs for people who inject
 | `icpsr.ipynb` | Construct NYC HANES profiles and evaluate saved HCV risk scores using survey correlation MAD and AUC. |
 | `tables.ipynb` | Generate the housing and correlation figures and the Table 3 summary from computed results. |
 | `analysis_utils.py` | Shared target definitions, rank statistics, matched-agent bootstrap, scoring, and table formatting. |
+| `artwork.py` | Shared figure layouts, exports, and checks at final publication size. |
 | `association_targets.json` | The 32 retained variable pairs and their prespecified directions. |
 | `run_analysis.py` | Execute the notebooks from saved inputs and validate the results, without enabling model generation. |
 
@@ -77,7 +78,9 @@ The runner checks the directional-scoring counts, statistical helpers, bootstrap
 
 `analysis_results/` contains the computed CSV summaries and audits, including `table3.csv`, `table_s3.csv`, `literature_target_audit.csv`, `abm_mad_pooled.csv`, `empirical_mad.csv`, and `empirical_auc.csv`. `verification_manifest.json` records the verification environment and input, code, and result hashes.
 
-`figures/` contains the housing comparison (`housing_effect`), generated-outcome correlation comparison (`main_corr`), condition-specific ABM comparison (`abm_corr2`), and observation-timing sensitivity (`abm_mad_tolerance_sweep`).
+`figures/` contains the housing comparison (`Fig2`), generated-outcome correlation comparison (`FigS1`), condition-specific ABM comparison (`FigS2`), and observation-timing sensitivity (`FigS3`). Separate captions are in `figure_captions.txt`.
+
+Artwork is formatted using the [journal's artwork guidelines](https://link.springer.com/journal/42001/submission-guidelines#Instructions%20for%20Authors_Artwork%20and%20Illustrations%20Guidelines). Exports include EPS with embedded fonts, PDF, SVG, and 600-dpi RGB PNG/TIFF. Figures use Arial lettering of 8–10 pt at 174 mm width, heights below 234 mm, and patterns or markers alongside color. `artwork_checks.json` records export dimensions and lettering checks. Captions remain separate from the artwork.
 
 ## Optional model generation
 

@@ -1,6 +1,7 @@
 numpy
 pandas
 matplotlib
+Pillow
 scipy
 scikit-learn
 # Optional generation only: boto3
