@@ -3,12 +3,13 @@ from itertools import combinations
 import io
 
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 from matplotlib.text import Text
 import numpy as np
 import pandas as pd
 from PIL import Image
 
-from .analysis_utils import FIGURE_DIR, MODELS, MODEL_LABELS
+from .analysis_utils import FIGURE_DIR, MODELS, MODEL_LABELS, ROOT
 
 MM_PER_INCH = 25.4
 WIDTH_MM = 174
@@ -16,9 +17,35 @@ RASTER_DPI = 600
 FONT_PT = 8
 
 
+def _font_path(face):
+    return ROOT / "figures" / "assets" / "fonts" / f"LiberationSans-{face}.ttf"
+
+
+def _register_fonts():
+    for face in ["Regular", "Bold", "Italic"]:
+        path = _font_path(face)
+        if not path.is_file():
+            raise FileNotFoundError(f"Missing bundled figure font: {path}")
+        if not any(entry.fname == str(path) for entry in font_manager.fontManager.ttflist):
+            font_manager.fontManager.addfont(str(path))
+
+
+def _set_figure_fonts(fig):
+    """Use the committed font files for every text artist."""
+    _register_fonts()
+    for artist in fig.findobj(match=Text):
+        properties = artist.get_fontproperties().copy()
+        weight = properties.get_weight()
+        weight = font_manager.weight_dict.get(weight, weight)
+        face = "Bold" if weight >= 600 else "Italic" if properties.get_style() in {"italic", "oblique"} else "Regular"
+        properties.set_file(str(_font_path(face)))
+        artist.set_fontproperties(properties)
+
+
 def configure_artwork():
+    _register_fonts()
     plt.rcParams.update({
-        "font.family": "Arial", "font.size": FONT_PT,
+        "font.family": "Liberation Sans", "font.size": FONT_PT,
         "axes.labelsize": 9, "axes.titlesize": 9,
         "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 8,
         "pdf.fonttype": 42, "ps.fonttype": 42,
@@ -36,6 +63,7 @@ def export_artwork(fig, name, minimum_font_pt=8, raster_dpi=RASTER_DPI):
     width_mm, height_mm = fig.get_size_inches() * MM_PER_INCH
     if abs(width_mm-WIDTH_MM) > .01 or height_mm > 234:
         raise ValueError(f"Invalid final size for {name}: {width_mm} x {height_mm} mm")
+    _set_figure_fonts(fig)
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     page = fig.bbox
@@ -81,6 +109,7 @@ def save_original_artwork(fig, name):
     if not np.allclose([width_mm, height_mm], [174, 234], rtol=0, atol=.01):
         raise ValueError(f"Unexpected page dimensions: {width_mm} x {height_mm}")
     FIGURE_DIR.mkdir(exist_ok=True)
+    _set_figure_fonts(fig)
     fig.canvas.draw()
     for suffix in ["pdf", "eps"]:
         fig.savefig(FIGURE_DIR/f"{name}.{suffix}", bbox_inches=None, dpi=RASTER_DPI)
@@ -137,7 +166,8 @@ def plot_cnep_correlations(results_df):
     """Compare housing-specific LLM correlations with matched CNEP+ follow-up."""
     import string
     with plt.rc_context(plt.rcParamsDefault):
-        plt.rcParams["font.family"] = "Arial"
+        _register_fonts()
+        plt.rcParams["font.family"] = "Liberation Sans"
         plt.rcParams["pdf.fonttype"] = 42
         plt.rcParams["ps.fonttype"] = 42
 
@@ -218,7 +248,7 @@ def plot_cnep_correlations(results_df):
             ax.spines[["top", "right"]].set_visible(False)
             ax.tick_params(labelsize=7)
             ax.text(0.5, -0.32, f"({subfig_labels[i]})", transform=ax.transAxes,
-                ha="center", va="top", fontsize=8, fontname="Arial",)
+                ha="center", va="top", fontsize=8, fontname="Liberation Sans",)
 
         model_handles = [plt.Line2D([0], [0], marker="s", color="w", markerfacecolor=c, markersize=7, label=m)
             for m, c in model_colors.items()]
@@ -231,6 +261,7 @@ def plot_cnep_correlations(results_df):
         fig.legend(handles=model_handles + housing_handles + cnep_handle, loc="lower center",
             ncol=6, frameon=False, fontsize=7, bbox_to_anchor=(0.5, -0.005),)
 
+        _set_figure_fonts(fig)
         plt.tight_layout(rect=[0, 0, 1, 1])
 
         save_original_artwork(fig, "FigS2")

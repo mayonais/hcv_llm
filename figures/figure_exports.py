@@ -34,29 +34,30 @@ def export_formats(pdf_path, dpi=600):
         raise ValueError("Raster export resolution must be a positive integer DPI.")
     ppm = poppler_tool("pdftoppm")
     if ppm is None:
-        raise RuntimeError("Install Poppler (pdftoppm) to export 600-dpi PNG/TIFF previews.")
+        print(f"Skipped PNG/TIFF exports for {pdf_path.name}: install Poppler (pdftoppm) to enable raster exports.")
+    ps = poppler_tool("pdftops")
     page_count = len(PdfReader(pdf_path).pages)
     result = []
     for page in range(1, page_count + 1):
         stem = pdf_path.stem if page_count == 1 else f"{pdf_path.stem}_page{page}"
         base = pdf_path.with_name(stem)
-        render_base = base.with_name(base.name + ".render")
-        subprocess.run([ppm, "-f", str(page), "-l", str(page), "-singlefile",
-                        "-r", str(dpi), "-png", str(pdf_path), str(render_base)], check=True,
-                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        png_path = base.with_suffix(".png")
-        rendered_path = Path(str(render_base) + ".png")
-        with Image.open(rendered_path) as source:
-            rgb = source.convert("RGB")
-            temporary = base.with_suffix(".tmp.png")
-            rgb.save(temporary, dpi=(dpi, dpi))
-            temporary.replace(png_path)
-            temporary_tiff = base.with_suffix(".tmp.tif")
-            rgb.save(temporary_tiff, compression="tiff_lzw", dpi=(dpi, dpi))
-            temporary_tiff.replace(base.with_suffix(".tif"))
-        rendered_path.unlink()
-        result.append(png_path)
-        ps = poppler_tool("pdftops")
+        if ppm:
+            render_base = base.with_name(base.name + ".render")
+            subprocess.run([ppm, "-f", str(page), "-l", str(page), "-singlefile",
+                            "-r", str(dpi), "-png", str(pdf_path), str(render_base)], check=True,
+                           stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            png_path = base.with_suffix(".png")
+            rendered_path = Path(str(render_base) + ".png")
+            with Image.open(rendered_path) as source:
+                rgb = source.convert("RGB")
+                temporary = base.with_suffix(".tmp.png")
+                rgb.save(temporary, dpi=(dpi, dpi))
+                temporary.replace(png_path)
+                temporary_tiff = base.with_suffix(".tmp.tif")
+                rgb.save(temporary_tiff, compression="tiff_lzw", dpi=(dpi, dpi))
+                temporary_tiff.replace(base.with_suffix(".tif"))
+            rendered_path.unlink()
+            result.append(png_path)
         if ps:
             subprocess.run([ps, "-f", str(page), "-l", str(page), "-eps",
                             str(pdf_path), str(base.with_suffix(".eps"))], check=True,

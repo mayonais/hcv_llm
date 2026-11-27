@@ -1,5 +1,3 @@
-2018-09-13--06.02.24.events.csv
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -218,9 +216,8 @@ __marimo__/
 /jsonl/
 /analysis_changes.txt
 
-# Track PNG figure exports and their notebook/source; other formats remain local.
+# Track figure source files and fonts
 /figures/*
-!/figures/*.png
 !/figures/*.py
 !/figures/*.ipynb
 !/figures/figure_captions.txt

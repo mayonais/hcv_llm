@@ -22,7 +22,9 @@ This repository implements the evaluation described in the main manuscript and s
 
 ## Setup and execution
 
-Install the required packages with a working Python installation:
+The workflow is tested with Python 3.12 and the main dependency versions pinned in `requirements.txt`
+
+Install the required Python packages:
 
 ```sh
 python -m pip install -r requirements.txt
@@ -48,18 +50,30 @@ python analysis/run_workflow.py --rebuild-survey-profiles
 
 The runner disables model generation, executes every code cell in each selected notebook, captures text logs, refreshes Table 3, and hashes the saved responses and source data before and after. Its default report is `analysis_results/workflow_check.json`; logs are in `analysis_results/workflow_logs/`. `--refresh-notebook-outputs` also saves captured text outputs in the notebooks. Failed runs replace any previous success report with a failure report.
 
-The notebooks can also be run interactively in this order: prompts, outcome analysis, prompt sensitivity, NYC HANES, invariance, bootstrap, figures. Analysis notebooks accept either the repository root or `analysis/` as their working directory; the figure notebook also accepts `figures/`. Figure generation requires Poppler (`pdftoppm`); EPS alternatives additionally require `pdftops`. The figure notebook enables both `BUILD_OTHER_FIGURES` and `BUILD_SUMMARY_TABLES` by default. Either switch can be set to `False` to skip those optional exports during an interactive run.
+To open the notebooks interactively, install JupyterLab with `python -m pip install jupyterlab` and start it with `jupyter lab`
+
+The figure source is [`figures/figures2.ipynb`](figures/figures2.ipynb), with its drawing helpers and fonts included. It can rebuild the figures directly from the included result CSVs. Generated PNG, PDF, TIFF, and EPS files stay local rather than being versioned
+
+The notebooks can also be run interactively in this order: prompts, outcome analysis, prompt sensitivity, NYC HANES, invariance, bootstrap, figures. Analysis notebooks accept either the repository root or `analysis/` as their working directory; the figure notebook also accepts `figures/`. PDF figures and tables use the Python requirements only. Poppler is optional: `pdftoppm` adds PNG/TIFF copies of Fig2 and FigS1, and `pdftops` adds EPS copies. Missing Poppler skips these optional exports without stopping the workflow. The figure notebook enables both `BUILD_OTHER_FIGURES` and `BUILD_SUMMARY_TABLES` by default. Either switch can be set to `False` to skip those optional exports during an interactive run.
 
 ## Study inputs and preserved schemas
 
 - `llm_outputs/outputs.csv` and `.jsonl`: saved behavioral responses, identified by model, agent, housing condition, and prompt version.
 - `llm_outputs/knowledge_outputs.csv` and `.jsonl`: saved knowledge-probe responses; analysis selects the 32 retained relationships.
 - `llm_outputs/outputs_nyc_hanes.csv` and `.jsonl`: participant characteristics, observed antibody status, and generated risk scores.
-- `2018-09-13--06.02.24.events.csv`: CNEP+ simulation records, read with `header=4`.
+- `2018-09-13--06.02.24.events.csv`: included CNEP+ simulation records, read with `header=4`. No separate CNEP+ download is needed
 
 Saved response keys, API model identifiers, historical prompt-version labels, and literal prompt strings are preserved. Behavioral `Paraphrase=0` is original and `2` is the broad paraphrase; the earlier behavioral `1` remains in the raw files but is excluded from the paper analyses. Knowledge probes use their own original/alternate labels `0` and `1`.
 
-The optional NYC HANES construction uses `ICPSR_31421/DS0001/31421-0001-Data.dta` through `DS0006/31421-0006-Data.dta`. These source downloads are not tracked. The saved-score analysis runs without them. In `analysis/icpsr.ipynb`, set `BUILD_PROFILES=True` to reconstruct profiles; generation also requires `RUN_GENERATION=True`. Generation uses Boto3 and Amazon Bedrock credentials and writes raw outputs only when explicitly enabled in the generation notebooks. `boto3` is not required to analyze saved responses.
+A fresh clone includes the CNEP+ source data, saved LLM responses, paper result CSVs, figure notebooks, drawing code, and fonts
+
+| Task | Requires `ICPSR_31421`? |
+| --- | --- |
+| Recompute the reported analyses from saved responses | No |
+| Regenerate the paper figures and tables | No |
+| Rebuild the NYC HANES profiles from original survey files | Yes |
+
+The optional NYC HANES construction uses `ICPSR_31421/DS0001/31421-0001-Data.dta` through `DS0006/31421-0006-Data.dta`. These source downloads are not tracked. The saved-score analysis runs without them because participant covariates, antibody labels, and generated scores are included in `llm_outputs/outputs_nyc_hanes.csv`. Add the six Stata files under this folder only when using `--rebuild-survey-profiles`. In `analysis/icpsr.ipynb`, set `BUILD_PROFILES=True` to reconstruct profiles; generation also requires `RUN_GENERATION=True`. Generation uses Boto3 and Amazon Bedrock credentials and writes raw outputs only when explicitly enabled in the generation notebooks. `boto3` is not required to analyze saved responses.
 
 ## Definitions matched to the paper
 
@@ -82,7 +96,7 @@ Other outputs include `housing_effects.csv`, `pooled_outcome_correlations.csv`, 
 
 Fig2 and FigS1 show bootstrap directional agreement below the observed estimates; knowledge-probe estimates and intervals remain LLM-reported responses. FigS2 shows housing-specific correlations with matched CNEP+ references. FigS3 shows timing sensitivity and retained counts. Captions are in `figures/figure_captions.txt`.
 
-The established dimensions and typography are retained: Fig2 is 160 x 203.6939 mm; both FigS1 pages are 174 x 207.4333 mm. Fig2/FigS1 use bundled, licensed Liberation Sans fonts. Model arrows are 9.4 pt, expected arrows 13 pt, estimates 8.2 pt, and knowledge estimates/agreement lines 7.2 pt. PDF page boxes are fixed without tight cropping. PNG/TIFF exports are RGB at 600 dpi, except FigS3 at 1200 dpi. FigS1 has separate page1/page2 exports and no duplicate first-page alias. Fonts and their license remain active dependencies.
+The established dimensions and typography are retained: Fig2 is 160 x 203.6939 mm; both FigS1 pages are 174 x 207.4333 mm. All figures use bundled, licensed Liberation Sans fonts. Model arrows are 9.4 pt, expected arrows 13 pt, estimates 8.2 pt, and knowledge estimates/agreement lines 7.2 pt. PDF page boxes are fixed without tight cropping. PNG/TIFF exports are RGB at 600 dpi, except FigS3 at 1200 dpi. FigS1 has separate page1/page2 exports and no duplicate first-page alias. Fonts and their license remain active dependencies.
 
 ## Local archives and audit records
 
