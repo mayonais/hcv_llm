@@ -1,10 +1,7 @@
-measure,claudesonnet4.6,deepseek.v3.2,gpt-oss-120b
-Overdose,49.1,100.0,32.1
-Public_prop,100.0,74.6,98.7
-Recept_sharing,69.6,94.6,40.2
-Partners,71.4,90.6,35.3
-Drug_in,97.8,96.9,71.9
-Drug_out,97.3,99.1,67.4
-Partner_HCV_prop,97.8,100.0,88.4
-Injections,97.3,99.6,33.5
-Alt_route,65.2,84.4,48.2
+Model,Variable pair,Original,Paraphrased
+Claude Sonnet 4.6,Homelessness / Non-injection routes,decrease,uncertain
+DeepSeek v3.2,Non-injection routes / HCV status,decrease,increase
+GPT-OSS-120B,Treatment / Non-injection routes,mixed,increase
+GPT-OSS-120B,Non-injection routes / Overdose,increase,decrease
+GPT-OSS-120B,HCV status / Overdose,uncertain,mixed
+GPT-OSS-120B,Receptive sharing / Overdose,mixed,increase

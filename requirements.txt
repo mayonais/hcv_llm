@@ -4,5 +4,6 @@ matplotlib
 Pillow
 scipy
 scikit-learn
+reportlab
+pypdf
 # Optional generation only: boto3
-# Optional token diagnostics only: tiktoken

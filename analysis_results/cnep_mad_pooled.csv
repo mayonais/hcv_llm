@@ -1,0 +1,4 @@
+Model,Housing,N_agents,N_rows,N_pairs,N_pairs_prespecified,mean_corr_difference,ci_lower,ci_upper,bootstrap_valid,bootstrap_total,ci_status,Bootstrap_strata,N_strata,N_profiles_per_stratum,Bootstrap_seed
+claudesonnet4.6,Combined stable and homeless,224,448,10,10,0.10568375233464511,0.08068899804158457,0.1443854109584816,1000,1000,ok,Gender x Race x injection experience,16,14,42
+deepseek.v3.2,Combined stable and homeless,224,448,10,10,0.12615227631163445,0.09679784287454431,0.16521929803336827,1000,1000,ok,Gender x Race x injection experience,16,14,42
+gpt-oss-120b,Combined stable and homeless,224,448,10,10,0.12310453185346129,0.1000872985095289,0.16146865562568902,1000,1000,ok,Gender x Race x injection experience,16,14,42

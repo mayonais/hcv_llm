@@ -1,0 +1,3 @@
+# Preserve saved LLM responses byte for byte
+/llm_outputs/*.csv -text
+/llm_outputs/*.jsonl -text

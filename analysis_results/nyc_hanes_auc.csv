@@ -1,0 +1,4 @@
+Model,N,Bootstrap_strata,Bootstrap_seed,N_strata,N_participants_per_stratum,bootstrap_total,AUC,AUC_lower_95,AUC_upper_95,bootstrap_valid,ci_status
+claudesonnet4.6,70,HCV antibody status,42,2,35,1000,0.8538775510204082,0.7628163265306123,0.9265612244897959,1000,ok
+deepseek.v3.2,70,HCV antibody status,42,2,35,1000,0.8257142857142857,0.7261020408163266,0.9085714285714285,1000,ok
+gpt-oss-120b,70,HCV antibody status,42,2,35,1000,0.7816326530612244,0.6656938775510204,0.8804285714285714,1000,ok

@@ -1,0 +1,4 @@
+Model,N,Bootstrap_strata,Bootstrap_seed,N_strata,N_participants_per_stratum,bootstrap_total,NYC_HANES_MAD,MAD_lower_95,MAD_upper_95,Bootstrap_B,N_covariates,bootstrap_covariates_min,bootstrap_covariates_max,bootstrap_valid,ci_status
+claudesonnet4.6,70,HCV antibody status,42,2,35,1000,0.1695712981771852,0.10539597182346293,0.26717539546208885,1000,12,12,12,1000,ok
+deepseek.v3.2,70,HCV antibody status,42,2,35,1000,0.15386015804700962,0.1024418833557185,0.2625216911156356,1000,12,12,12,1000,ok
+gpt-oss-120b,70,HCV antibody status,42,2,35,1000,0.17693313871259844,0.1089764359483854,0.28284359246344404,1000,12,12,12,1000,ok

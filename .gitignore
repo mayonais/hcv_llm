@@ -210,15 +210,28 @@ __marimo__/
 
 # Local archives, runtime dependencies, and source-survey downloads
 /archive/
+/archive 11-22-2026/
 /tmp/
-/generated_outputs/
 /ICPSR_31421/
 /meps/
 /output/
 /jsonl/
 /analysis_changes.txt
-/original_file_hashes.json
 
-# Only PNG figure exports are published; other formats remain local.
+# Track PNG figure exports and their notebook/source; other formats remain local.
 /figures/*
 !/figures/*.png
+!/figures/*.py
+!/figures/*.ipynb
+!/figures/figure_captions.txt
+!/figures/assets/
+!/figures/assets/**
+
+# Local archives and audit artifacts
+/archive 11-26-2026/
+/analysis_results/code_audit/
+/analysis_results/code_audit_contract.json
+/analysis_results/*_checks.json
+/analysis_results/workflow_check.json
+/analysis_results/workflow_logs/
+/analysis_results/bootstrap_resamples.csv
